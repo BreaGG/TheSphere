@@ -1,0 +1,28 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: none;
+
+  color-scheme: light dark;
+  color: #1e1e1e ;
+  background-color: #E5E3E1;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --naranja: #FF503F; /* Color primario */
+  --blanco: #FFFFFF; /* Color secundario */
+  --negro: #1E1E1E; /* Color de fondo */
+}
+
+.botonNaranja {
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 2rem;
+  padding: 0.5rem;
+  background-color: var(--naranja);
+  color: var(--blanco);
+}
