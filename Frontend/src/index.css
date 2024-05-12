@@ -16,6 +16,7 @@
   --naranja: #FF503F; /* Color primario */
   --blanco: #FFFFFF; /* Color secundario */
   --negro: #1E1E1E; /* Color de fondo */
+  --fondo: #E5E3E1;
 }
 
 .botonNaranja {
@@ -25,4 +26,8 @@
   padding: 0.5rem;
   background-color: var(--naranja);
   color: var(--blanco);
+}
+
+span {
+  color: var(--naranja);
 }
