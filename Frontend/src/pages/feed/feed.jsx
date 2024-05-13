@@ -23,15 +23,25 @@ function Feed() {
             <Navbar />
             <div className="post-grid">
                 <div className="left-container">
-                    {posts.slice(0, visiblePosts).filter((post, index) => index % 3 === 0).map(post => (
-                        <div key={post.id} className="post">
-                            <h2>{post.title}</h2>
-                            <h3>Author: {post.user.username}</h3>
-                            <img src={post.media} alt="Post Media" />
-                            <p>Description: {post.description}</p>
-                        </div>
-                    ))}
+                    {posts.slice(0, visiblePosts).filter((post, index) => index % 3 === 0).map(post => {
+                        const lastSpaceIndex = post.title.lastIndexOf(' ');
+                        const titlePart1 = post.title.slice(0, lastSpaceIndex);
+                        const titlePart2 = post.title.slice(lastSpaceIndex + 1);
+                        
+                        return (
+                            <div key={post.id} className="post">
+                                <h2>
+                                    {titlePart1} <br />
+                                    <span>{titlePart2}</span>
+                                </h2>
+                                <h3>Author: {post.user.username}</h3>
+                                <img src={post.media} alt="Post Media" />
+                                <p>Description: {post.description}</p>
+                            </div>
+                        );
+                    })}
                 </div>
+
                 <div className="right-container">
                     {posts.slice(0, visiblePosts).filter((post, index) => index % 3 !== 0).map(post => (
                         <div key={post.id} className="post">
