@@ -47,7 +47,7 @@ nav {
     grid-column: span 2;
 }
 
-input[type="text"] {
+nav input[type="text"] {
     width: 90%;
     padding: 0.5rem;
     border: 2px solid var(--negro);

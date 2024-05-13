@@ -1,0 +1,107 @@
+.Login {
+    background-image: url(../../assets/img/background.png);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+}
+
+.Login div a{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: -10%;
+    
+}
+
+.sphereButton {
+    background-color: var(--naranja);
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 0.5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    color: #FFF;
+    text-align: center;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -1.8px;
+    text-transform: uppercase;
+}
+
+
+
+.Login article{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Login article p {
+    width: 20%;
+    color: var(--blanco);
+    font-weight: 700;
+    text-align: justify;
+    font-size: 1.3rem;
+    margin: 5%;
+}
+
+.Login article form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fondo);
+    padding: 2rem;
+}
+
+.Login article form h1{
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.Login article form label{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.Login article form input{
+    width: 85%;
+    background-color: var(--gris);
+    border-radius: 0px;
+    border: none;
+    height: 3rem;
+    font-size: 2rem;
+}
+
+.Login article form input::placeholder{
+    font-size: 1.7rem;
+}
+
+
+.Login article p.p {
+    margin-top: 14%; /* Añade un margen superior del 20% */
+}
+
+.Login article p.bottom-margin {
+    margin-bottom: 14%; /* Añade un margen inferior del 20% */
+}
+
+.text-b {
+    color: var(--negro);
+    font-weight: bold;
+    margin-top: 0.5%;
+}

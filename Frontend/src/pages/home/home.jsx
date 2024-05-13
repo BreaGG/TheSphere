@@ -51,9 +51,9 @@ function Home() {
                     you'll embark on a journey of creativity, growth, and meaningful connections. Whether you're an experienced pro or 
                     just starting out, there's a place for you in The Sphere. Start capturing your story today.
                     </p>
-                    <Link className='joinButton' to="/feed">JOIN NOW!</Link>
+                    <Link className='joinButton' to="/register">JOIN NOW!</Link>
                     {/* <a className='joinButton' href="">JOIN NOW!</a> */}
-                    <Link className='text-a' href="">ALREDY HAVE AN ACCOUNT? LOG IN!</Link>
+                    <Link className='text-a' to="/login">ALREDY HAVE AN ACCOUNT? LOG IN!</Link>
                 </div>
             </div>
         </section>
