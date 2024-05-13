@@ -23,7 +23,7 @@ function Feed() {
             <Navbar />
             <div className="post-grid">
                 <div className="left-container">
-                    {posts.slice(0, visiblePosts).slice(0, 1).map(post => (
+                    {posts.slice(0, visiblePosts).filter((post, index) => index % 3 === 0).map(post => (
                         <div key={post.id} className="post">
                             <h2>{post.title}</h2>
                             <h3>Author: {post.user.username}</h3>
@@ -33,7 +33,7 @@ function Feed() {
                     ))}
                 </div>
                 <div className="right-container">
-                    {posts.slice(0, visiblePosts).slice(1, visiblePosts).map(post => (
+                    {posts.slice(0, visiblePosts).filter((post, index) => index % 3 !== 0).map(post => (
                         <div key={post.id} className="post">
                             <h3>Author: {post.user.username}</h3>
                             <img src={post.media} alt="Post Media" />
@@ -44,7 +44,7 @@ function Feed() {
                 </div>
             </div>
             {visiblePosts < posts.length && (
-                <button onClick={handleShowMore}>Mostrar más</button>
+                <button className='loadMoreButton' onClick={handleShowMore}>LOAD MORE</button>
             )}
             <Footer />
         </section>

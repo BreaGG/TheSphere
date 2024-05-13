@@ -1,7 +1,10 @@
 .post-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    justify-content: center;
+    margin-left: 8%;
+    
 }
 
 .left-container,
@@ -12,6 +15,10 @@
 .post {
     width: 100%; 
     margin-bottom: 20px;
+}
+
+.left-container .post{
+    border-right: 2px solid var(--negro);
 }
 
 .left-container .post img{
@@ -60,4 +67,23 @@
 
 .right-container .post{
     width: 70%;
+    margin-left: 8%;
+}
+
+
+.loadMoreButton {
+    background-color: var(--naranja);
+    color: var(--blanco);
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 1rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
 }
