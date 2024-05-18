@@ -69,10 +69,11 @@
     color: var(--naranja);
     margin-bottom: -6%;
     margin-top: -0;
+    text-transform: uppercase;
 }
 
 .post-grid-container h2 {
-    margin-top: 1.2rem;
+    margin-top: 5%;
     font-weight: 700;
     margin-bottom: -2%;
     font-size: 1rem;
@@ -81,6 +82,7 @@
 
 .post-grid-container p {
     font-weight: 700;
+    text-align: justify;
 }
 
 .Post1 img,
@@ -92,6 +94,7 @@
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1; 
+    object-fit: cover;
     max-width: 100%; 
 }
 
@@ -107,5 +110,16 @@
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
+    object-fit: cover;
     max-width: 100%; 
+}
+
+
+.Post1 img,
+.Post2 img,
+.Post7 img,
+.Post4 img,
+.Post6 img,
+.Post8 img {
+    filter: saturate(0);
 }

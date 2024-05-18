@@ -42,13 +42,13 @@ function Feed() {
                             return (
                                 <Link key={post.id} to={`/posts/${post.id}`} className="post-link">
                                     <div className="post">
-                                        <h2>
+                                        <h1>
                                             {titlePart1} <br />
                                             <span>{titlePart2}</span>
-                                        </h2>
+                                        </h1>
                                         <h3>Author: {post.user.username}</h3>
                                         <img src={post.media} alt="Post Media" />
-                                        <p>Description: {post.description}</p>
+                                        <p>{post.description}</p>
                                     </div>
                                 </Link>
                             );
@@ -64,7 +64,7 @@ function Feed() {
                                     <h3>Author: {post.user.username}</h3>
                                     <img src={post.media} alt="Post Media" />
                                     <h2>{post.title}</h2>
-                                    <p>Description: {post.description}</p>
+                                    <p>{post.description}</p>
                                 </div>
                             </Link>
                         ))}

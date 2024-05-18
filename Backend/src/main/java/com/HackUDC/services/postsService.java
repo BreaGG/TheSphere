@@ -1,7 +1,9 @@
 package com.HackUDC.services;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +35,14 @@ public class postsService {
 
     public Optional<postModel> getPostsById(Long postId) {
         return postRepository.findById(postId);
+    }
+
+    public List<postModel> getRandomPosts() {
+        List<postModel> allPosts = postRepository.findAll();
+        if (allPosts.isEmpty()) {
+            return Collections.emptyList(); 
+        }
+        Collections.shuffle(allPosts);
+        return allPosts.subList(0, Math.min(allPosts.size(), 8)); 
     }
 }

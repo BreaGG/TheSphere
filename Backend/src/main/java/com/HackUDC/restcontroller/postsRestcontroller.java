@@ -48,5 +48,8 @@ public class postsRestcontroller {
     //     return postsService.getPostsByUserId(userId);
     // }
 
-
+    @GetMapping("/posts/random")
+    public List<postModel> getRandomPosts() {
+        return postsService.getRandomPosts();
+    }
 }

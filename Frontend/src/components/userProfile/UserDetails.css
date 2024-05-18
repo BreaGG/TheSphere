@@ -29,19 +29,8 @@
     height: 270px;
     z-index: 1;
     border-right: 2px solid var(--negro);
-}
-
-.user-details .banner h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    color: var(--naranja);
-    font-size: 2em;
-    text-align: center;
-    margin: 0;
-    z-index: 2;
+    aspect-ratio: 16 / 9; /* esto ha sido clave monica  */
+    object-fit: cover;
 }
 
 .user-details h1 {
@@ -137,13 +126,13 @@
     font-weight: 700;
 }
 
-
-
 .ProfilePic {
     border-radius: 1000px;
     border: 2px solid var(--negro);
     width: 25%;
     filter: saturate(0%);
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
 }
 
 .post-list {
@@ -175,5 +164,7 @@
     height: auto;
     display: block;
     z-index: 1;
-    filter: saturate(30%);
+    filter: brightness(30%);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
