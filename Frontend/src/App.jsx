@@ -6,6 +6,7 @@ import Register from './pages/register/register';
 import Mainpage from './pages/mainpage/mainpage';
 import PostDetails from './components/postDetails/PostDetails';
 import UserDetails from './components/userProfile/UserDetails';
+import Contact from './pages/contact/contact';
 import './App.css'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/posts/:id" element={<PostDetails />} />
             <Route exact path="/users/:id" element={<UserDetails />} /> 
+            <Route exact path="/contact" element={<Contact />} /> 
         </Routes>
     </BrowserRouter>
   )
