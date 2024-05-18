@@ -1,6 +1,6 @@
 -- Insertar usuarios
 INSERT INTO users (username, password, email, profilePic, headerPic) VALUES
-('usuario1', 'contraseña1', 'usuario1@example.com', 'ruta/a/imagen1.jpg', 'ruta/a/imagen2.jpg'),
+('Alex Suarez', 'contraseña1', 'usuario1@example.com', 'ruta/a/imagen1.jpg', 'ruta/a/imagen2.jpg'),
 ('usuario2', 'contraseña2', 'usuario2@example.com', 'ruta/a/imagen3.jpg', 'ruta/a/imagen4.jpg'),
 ('usuario3', 'contraseña3', 'usuario3@example.com', 'ruta/a/imagen5.jpg', 'ruta/a/imagen6.jpg'),
 ('usuario4', 'contraseña4', 'usuario4@example.com', 'ruta/a/imagen7.jpg', 'ruta/a/imagen8.jpg'),
@@ -8,16 +8,14 @@ INSERT INTO users (username, password, email, profilePic, headerPic) VALUES
 
 -- Insertar publicaciones
 -- Publicaciones para usuario1
-INSERT INTO posts (title, technologies, subTitle, description, media, user_id) VALUES
-('Título de la publicación 1 para usuario1', 'Tecnologías de la publicación 1 para usuario1', 'Subtítulo de la publicación 1 para usuario1', 'Descripción de la publicación 1 para usuario1', 'https://res.cloudinary.com/dnc3btlfa/image/upload/v1708161569/HackUDC/jmg8qrhhoqsdntilohdr.webp', 1),
-('Título de la publicación 2 para usuario1', 'Tecnologías de la publicación 2 para usuario1', 'Subtítulo de la publicación 2 para usuario1', 'Descripción de la publicación 2 para usuario1', 'https://res.cloudinary.com/dnc3btlfa/image/upload/v1708161501/HackUDC/oevmwto4stkjez7d1fqp.png', 1);
+INSERT INTO posts (title, technologies, subTitle, description, subTitle2, description2, media, user_id) VALUES
+('Canary Islands paradise project', 'Adobe Photoshop - Adobe Ilustrator', 'Exploring Natures Canvas: Capturing the Essence of Canary Islands', 'In the heart of the Atlantic Ocean lies a hidden gem, the Canary Islands, a paradise of unparalleled beauty waiting to be explored through the lens of a camera. Our project, "Canary Islands Paradise," embarks on a photographic journey to showcase the captivating landscapes, diverse ecosystems, and vibrant culture of this enchanting archipelago. From the dramatic cliffs of Tenerife to the golden sands of Gran Canaria, our lenses capture the essence of this unique paradise. Through our images, we aim to transport viewers into a world where azure waters meet lush greenery, where ancient traditions blend seamlessly with modern life, and where every frame tells a story of the islands rich natural heritage.', 'Colors of Serenity: A Visual Ode to Canary Islands Paradise', 'In our photographic odyssey, Colors of Serenity, we delve into the chromatic wonders that define the Canary Islands unparalleled beauty. Each frame captures the interplay of hues that paint the skies during sunrise and sunset, the rich marine blues that surround the islands, and the vibrant flora that adorns the landscape. From the fiery reds of volcanic terrain to the soothing pastels of quaint coastal villages, our lenses unveil the poetic serenity of the Canary Islands. This project goes beyond mere visuals; it is an ode to the harmonious blend of colors that evoke a sense of peace and tranquility unique to this paradise. Through our photographs, we invite viewers to immerse themselves in the soothing palette of the Canary Islands and experience the serenity that nature so generously bestows upon this enchanting destination.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/v1708161569/HackUDC/jmg8qrhhoqsdntilohdr.webp', 1);
 
 -- Publicaciones para usuario2
 -- Publicaciones para usuario2
 INSERT INTO posts (title, technologies, subTitle, description, media, user_id) VALUES
 ('Título de la publicación 1 para usuario2', 'Tecnologías de la publicación 1 para usuario2', 'Subtítulo de la publicación 1 para usuario2', 'Descripción de la publicación 1 para usuario2', 'https://beige-jeanelle-25.tiiny.site/', 2),
-('Título de la publicación 2 para usuario2', 'Tecnologías de la publicación 2 para usuario2', 'Subtítulo de la publicación 2 para usuario2', 'Descripción de la publicación 2 para usuario2', 'https://res.cloudinary.com/dnc3btlfa/image/upload/v1708161685/HackUDC/kh7nkvjxdk97zugeottu.gif', 2),
-('Poema', 'Tecnologías del poema', 'Subtítulo del poema', 'A short poem', '', 2); -- Valor vacío para la columna media
+('Título de la publicación 2 para usuario2', 'Tecnologías de la publicación 2 para usuario2', 'Subtítulo de la publicación 2 para usuario2', 'Descripción de la publicación 2 para usuario2', 'https://res.cloudinary.com/dnc3btlfa/image/upload/v1708161685/HackUDC/kh7nkvjxdk97zugeottu.gif', 2);
 
 
 -- Publicaciones para usuario3

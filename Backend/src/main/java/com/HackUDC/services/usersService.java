@@ -1,6 +1,7 @@
 package com.HackUDC.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,10 @@ public class usersService {
 
     public void deleteUser(Long userId) {
         userRepository.deleteById(userId);
+    }
+
+    public userModel getUserById(Long userId) {
+        Optional<userModel> userOptional = userRepository.findById(userId);
+        return userOptional.orElse(null);
     }
 }

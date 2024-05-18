@@ -4,7 +4,11 @@
     justify-content: space-around;
     justify-content: center;
     margin-left: 8%;
-    
+}
+
+.Feed a {
+    text-decoration: none;
+    color: var(--negro);
 }
 
 .left-container,
@@ -19,6 +23,7 @@
 
 .left-container .post{
     border-right: 2px solid var(--negro);
+    padding: 1rem;
 }
 
 .left-container .post img{
@@ -46,6 +51,7 @@
 
 .right-container .post img{
     width: 70%;
+    filter: grayscale(100%);
 }
 
 .right-container .post p{

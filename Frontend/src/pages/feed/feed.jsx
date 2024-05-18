@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './feed.css';
 import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
@@ -19,52 +20,56 @@ function Feed() {
         setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 3);
     };
 
-    const filteredPosts = searchTerm
-        ? posts.filter(post =>
-            post.title.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-        : posts.slice(0, visiblePosts);
+    const filteredPosts = posts.filter(post =>
+        post.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const displayedPosts = filteredPosts.slice(0, visiblePosts);
 
     return (
         <section className='Feed'>
             <Navbar setSearchTerm={setSearchTerm} />
             <div className="post-grid">
                 <div className="left-container">
-                    {filteredPosts
+                    {displayedPosts
                         .filter((post, index) => index % 3 === 0)
                         .map(post => {
                             const lastSpaceIndex = post.title.lastIndexOf(' ');
                             const titlePart1 = post.title.slice(0, lastSpaceIndex);
                             const titlePart2 = post.title.slice(lastSpaceIndex + 1);
-                            
+
                             return (
-                                <div key={post.id} className="post">
-                                    <h2>
-                                        {titlePart1} <br />
-                                        <span>{titlePart2}</span>
-                                    </h2>
-                                    <h3>Author: {post.user.username}</h3>
-                                    <img src={post.media} alt="Post Media" />
-                                    <p>Description: {post.description}</p>
-                                </div>
+                                <Link key={post.id} to={`/posts/${post.id}`} className="post-link">
+                                    <div className="post">
+                                        <h2>
+                                            {titlePart1} <br />
+                                            <span>{titlePart2}</span>
+                                        </h2>
+                                        <h3>Author: {post.user.username}</h3>
+                                        <img src={post.media} alt="Post Media" />
+                                        <p>Description: {post.description}</p>
+                                    </div>
+                                </Link>
                             );
                         })}
                 </div>
 
                 <div className="right-container">
-                    {filteredPosts
+                    {displayedPosts
                         .filter((post, index) => index % 3 !== 0)
                         .map(post => (
-                            <div key={post.id} className="post">
-                                <h3>Author: {post.user.username}</h3>
-                                <img src={post.media} alt="Post Media" />
-                                <h2>{post.title}</h2>
-                                <p>Description: {post.description}</p>
-                            </div>
+                            <Link key={post.id} to={`/posts/${post.id}`} className="post-link">
+                                <div className="post">
+                                    <h3>Author: {post.user.username}</h3>
+                                    <img src={post.media} alt="Post Media" />
+                                    <h2>{post.title}</h2>
+                                    <p>Description: {post.description}</p>
+                                </div>
+                            </Link>
                         ))}
                 </div>
             </div>
-            {visiblePosts < posts.length && (
+            {visiblePosts < filteredPosts.length && (
                 <button className='loadMoreButton' onClick={handleShowMore}>
                     LOAD MORE
                 </button>

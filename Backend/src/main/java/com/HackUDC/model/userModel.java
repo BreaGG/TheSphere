@@ -32,6 +32,9 @@ public class userModel {
     @Column(length = 255, unique = true)
     private String email;
 
+    @Column(columnDefinition = "TEXT", length = 255, unique = true)
+    private String bio;
+
     @Column(unique = true, nullable = false)
     private String profilePic;
 

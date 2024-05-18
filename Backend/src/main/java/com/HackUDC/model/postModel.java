@@ -28,19 +28,19 @@ public class postModel {
     @Column(length = 255, unique = true, nullable = false)
     private String subTitle;
 
-    @Column(unique = true, nullable = false)
+    @Column(columnDefinition = "TEXT", unique = true, nullable = false)
     private String description;
 
     @Column(length = 255, unique = true, nullable = true)
     private String subTitle2;
 
-    @Column(unique = true, nullable = true)
+    @Column(columnDefinition = "TEXT", unique = true, nullable = true)
     private String description2;
 
     @Column(length = 255, unique = true, nullable = true)
     private String subTitle3;
 
-    @Column(unique = true, nullable = true)
+    @Column(columnDefinition = "TEXT", unique = true, nullable = true)
     private String description3;
 
     @Column(unique = true, nullable = false)

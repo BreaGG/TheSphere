@@ -31,6 +31,11 @@ public class usersRestcontroller {
         return usersService.saveUser(user);
     }
 
+    @GetMapping("/users/{id}")
+    public userModel getUserById(@PathVariable Long id) {
+        return usersService.getUserById(id);
+    }
+
     @DeleteMapping("/users/{id}")
     public String deleteUser(@PathVariable("id") Long userId) {
         usersService.deleteUser(userId);
