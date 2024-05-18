@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.HackUDC.dtos.UserDetailsDTO;
 import com.HackUDC.model.userModel;
 import com.HackUDC.repositories.userRepository;
 
@@ -39,4 +40,17 @@ public class usersService {
         return allUsers.subList(0, 3); 
     }
     
+    public UserDetailsDTO getUserWithPosts(Long id) {
+        userModel user = userRepository.findById(id).orElse(null);
+        if (user != null) {
+            return new UserDetailsDTO(user);
+        } else {
+            return null;
+        }
+    }
+
+    public List<UserDetailsDTO> getAllUsers() {
+        List<userModel> users = userRepository.findAll();
+        return UserDetailsDTO.fromUserModels(users);
+    }
 }

@@ -6,7 +6,7 @@
     margin-left: 8%;
 }
 
-.Feed a {
+.post-grid a {
     text-decoration: none;
     color: var(--negro);
 }
@@ -27,7 +27,7 @@
 }
 
 .left-container .post img{
-    width: 70%;
+    width: 100%;
 }
 
 .left-container .post h2{
@@ -51,7 +51,7 @@
 
 .right-container .post img{
     width: 70%;
-    filter: grayscale(100%);
+    filter: saturate(0%);
 }
 
 .right-container .post p{

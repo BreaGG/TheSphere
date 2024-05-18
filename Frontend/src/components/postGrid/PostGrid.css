@@ -1,0 +1,24 @@
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.post {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.post.large {
+    grid-row-end: span 2;
+}
+
+.post:nth-child(5n + 1),
+.post:nth-child(5n + 2) {
+    grid-row-end: span 2;
+}
+
+.post:nth-last-child(-n + 5) {
+    visibility: hidden;
+}

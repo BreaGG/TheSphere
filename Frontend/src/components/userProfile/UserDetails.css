@@ -8,21 +8,27 @@
 }
 
 .user-details .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     position: relative;
-    width: 100%;
+    width: 86%;
     flex-shrink: 0;
-    margin: 0 auto;
+    margin: 0;
     overflow: hidden;
+    z-index: 1;
+    border-right: 2px solid var(--negro);
 }
 
 .user-details .banner img {
     width: 100%;
     height: auto;
     display: block;
-    filter: grayscale(100%);
-    height: 225.226px;
-    width: 100%;
+    filter: saturate(0%);
+    height: 270px;
     z-index: 1;
+    border-right: 2px solid var(--negro);
 }
 
 .user-details .banner h1 {
@@ -57,21 +63,51 @@
 
 }
 
-.PostBody {
+.UserBody {
     width: 80%;
     border-right: 2px solid var(--negro);
-    margin: 1%;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
-.PostBody img{
+.UserBody p{
     width: 90%;
-    
+    text-align: justify;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.UserBody h1{
+    font-size: 1.5rem;
+}
+
+.UserBody h3{
+    margin-top: -2%;
+}
+
+.UserBody h2{
+    color: var(--naranja);
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.UserBody .ProfilePic{
+    width: 10%;
+    margin-top: -7%;
+    margin-bottom: -2%;
+    z-index: 4;
+    position: relative;
 }
 
 .asideUser {
     width: 20%;
     height: 100%;
     margin: 1%;
+}
+
+.asideUser h2{
+    color: var(--naranja);
 }
 
 .user {
@@ -84,4 +120,60 @@
 .userInfo {
     display: flex;
     flex-direction: column;
+    color: var(--negro);
+}
+
+.asideUser a{
+    text-decoration: none;
+}
+
+.userInfo h3{
+    color: var(--naranja);
+    text-transform: uppercase;
+    margin-bottom: -4%;
+}
+
+.userInfo p{
+    font-weight: 700;
+}
+
+
+
+.ProfilePic {
+    border-radius: 1000px;
+    border: 2px solid var(--negro);
+    width: 25%;
+    filter: saturate(0%);
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.project {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    color: var(--naranja);
+    font-size: 3em;
+    text-align: center;
+    margin: 0;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 1;
+    filter: saturate(30%);
 }

@@ -20,9 +20,10 @@ nav {
 }
 
 .navButton:hover {
-    color: var(--naranja);
+    color: var(--blanco);
     border: 3px solid var(--naranja);
     transition: .2s linear;
+    background-color: var(--naranja);
 }
 
 .shareButton {
@@ -34,6 +35,10 @@ nav {
     font-weight: 700;
     font-size: 1.1rem;
     transition: .2s linear;
+}
+
+.shareButton a {
+    color: var(--blanco);
 }
 
 .shareButton:hover {

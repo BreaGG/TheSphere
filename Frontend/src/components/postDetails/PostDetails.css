@@ -8,11 +8,17 @@
 }
 
 .post-details .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     position: relative;
-    width: 100%;
+    width: 86%;
     flex-shrink: 0;
-    margin: 0 auto;
+    margin: 0;
     overflow: hidden;
+    z-index: 1;
+    border-right: 2px solid var(--negro);
 }
 
 .post-details .banner img {
@@ -20,7 +26,7 @@
     height: auto;
     display: block;
     filter: grayscale(100%);
-    height: 225.226px;
+    height: 270px;
     width: 100%;
     z-index: 1;
 }
@@ -28,12 +34,11 @@
 .post-details .banner h1 {
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
+    left: 28%;
+    width: auto;
+    transform: translateY(-50%);
     color: var(--naranja);
     font-size: 2em;
-    text-align: center;
     margin: 0;
     z-index: 2;
 }
@@ -57,21 +62,65 @@
 
 }
 
-.UserBody {
+.PostBody {
     width: 80%;
     border-right: 2px solid var(--negro);
-    margin: 1%;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
-.UserBody img{
+.PostBody img{
     width: 90%;
-    
+}
+
+.PostBody p{
+    text-align: justify;
+    font-weight: 600;
+}
+
+.PostBody h2{
+    text-align: justify;
+    font-weight: 700;
+    color: var(--naranja);
+    text-transform: uppercase;
+}
+
+.PostBody h3{
+    text-align: justify;
+    font-weight: 500;
+    margin-top: -2%;
+    font-size: 1rem;
 }
 
 .asideUser {
     width: 20%;
     height: 100%;
     margin: 1%;
+}
+
+.asideUser button{
+    background-color: var(--naranja);
+    border: none;
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: var(--blanco);
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+    border: 2px solid var(--naranja);
+    transition: .2s linear;
+}
+
+.asideUser button:hover{
+    background-color: var(--fondo);
+    color: var(--naranja);
+    transition: .2s linear;
 }
 
 .user {

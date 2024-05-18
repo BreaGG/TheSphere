@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './feed.css';
 import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
+import PostGrid from '../../components/postGrid/postGrid';
 
 function Feed() {
     const [posts, setPosts] = useState([]);
@@ -74,6 +75,7 @@ function Feed() {
                     LOAD MORE
                 </button>
             )}
+            <PostGrid/>
             <Footer />
         </section>
     );

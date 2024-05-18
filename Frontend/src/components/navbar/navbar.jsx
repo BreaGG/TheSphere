@@ -22,13 +22,13 @@ function Navbar({ setSearchTerm }) {
             <NavLink to="/feed">
                 <img src={LogoSphere} alt="" />
             </NavLink>
-            <NavLink className="navButton" to="/">
+            <NavLink className="navButton" to="/feed">
                 FOR YOU
             </NavLink>
-            <NavLink className="navButton" to="/">
+            <NavLink className="navButton" to="/feed">
                 DESIGN
             </NavLink>
-            <NavLink className="navButton" to="/">
+            <NavLink className="navButton" to="/feed">
                 DEVS
             </NavLink>
             <div className="search-container">

@@ -41,13 +41,12 @@ function PostDetails() {
                     </div>
                     <div className='asideUser'>
                         <div className='user'>
-                            <img src={post.user.profilePic} alt="Profile Pic" />
+                            <img src={post.user.profilePic} className='ProfilePic' alt="Profile Pic" />
                             <div className='userInfo'>
                                 <h3>{post.user.username}</h3>
                                 <p>{post.technologies}</p>
                             </div>
                         </div>
-                        {/* Enlace al UserDetails con el ID del post */}
                         <Link to={`/users/${post.user.id}`}>
                             <button>REACH OUT!</button>
                         </Link>

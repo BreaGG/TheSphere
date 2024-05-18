@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function RandomUsers() {
     const [randomUsers, setRandomUsers] = useState([]);
@@ -14,13 +15,15 @@ function RandomUsers() {
         <div className='asideUser'>
             <h2>FEATURED USERS</h2>
             {randomUsers.map(user => (
-                <div className='user' key={user.id}>
-                    <img src={user.profilePic} alt="Profile Pic" />
-                    <div className='userInfo'>
-                        <h3>{user.username}</h3>
-                        <p>{user.country}</p>
+                <Link to={`/users/${user.id}`} key={user.id} className='user-link'>
+                    <div className='user'>
+                        <img src={user.profilePic} className='ProfilePic' alt="Profile Pic" />
+                        <div className='userInfo'>
+                            <h3>{user.username}</h3>
+                            <p>{user.country}</p>
+                        </div>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     );
