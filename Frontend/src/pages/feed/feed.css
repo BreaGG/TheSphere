@@ -28,6 +28,7 @@
 
 .left-container .post img{
     width: 100%;
+    aspect-ratio: 16 / 9;
 }
 
 .left-container .post h2{
@@ -52,6 +53,7 @@
 .right-container .post img{
     width: 70%;
     filter: saturate(0%);
+    aspect-ratio: 16 / 9;
 }
 
 .right-container .post p{

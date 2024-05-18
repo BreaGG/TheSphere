@@ -1,24 +1,111 @@
-.post-grid {
+.post-grid-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: -8%;
+    margin-bottom: -5%;
+    padding: 8rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Post1 Post3 Post3 Post6 Post6 Blank2"
+        "Post1 Post3 Post3 Post6 Post6 Post8"
+        "Post2 Post3 Post3 Post5 Post5 Post8"
+        "Post2 Post4 Post4 Post5 Post5 Post7"
+        "Blank1 Post4 Post4 Post5 Post5 Post7";
 }
 
-.post {
-    background-color: #f0f0f0;
-    padding: 20px;
+.Post1 {
+    grid-area: Post1;
 }
 
-.post.large {
-    grid-row-end: span 2;
+.Post2 {
+    grid-area: Post2;
 }
 
-.post:nth-child(5n + 1),
-.post:nth-child(5n + 2) {
-    grid-row-end: span 2;
+.Blank1 {
+    grid-area: Blank1;
 }
 
-.post:nth-last-child(-n + 5) {
-    visibility: hidden;
+.Post3 {
+    grid-area: Post3;
+}
+
+.Post4 {
+    grid-area: Post4;
+}
+
+.Post5 {
+    grid-area: Post5;
+}
+
+.Post6 {
+    grid-area: Post6;
+}
+
+.Post7 {
+    grid-area: Post7;
+}
+
+.Post8 {
+    grid-area: Post8;
+}
+
+.Blank2 {
+    grid-area: Blank2;
+}
+
+.post-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.post-grid-container a {
+    color: var(--negro);
+    text-decoration: none;
+}
+
+.post-grid-container h1 {
+    color: var(--naranja);
+    margin-bottom: -6%;
+    margin-top: -0;
+}
+
+.post-grid-container h2 {
+    margin-top: 1.2rem;
+    font-weight: 700;
+    margin-bottom: -2%;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.post-grid-container p {
+    font-weight: 700;
+}
+
+.Post1 img,
+.Post3 img,
+.Post5 img,
+.Post2 img,
+.Post7 img,
+.Post8 img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; 
+    max-width: 100%; 
+}
+
+.Post1 h2,
+.Post2 h2,
+.Post7 h2,
+.Post8 h2 {
+    display: none;
+}
+
+.Post4 img,
+.Post6 img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-width: 100%; 
 }

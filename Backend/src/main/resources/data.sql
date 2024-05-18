@@ -16,7 +16,7 @@ INSERT INTO posts (title, technologies, subTitle, description, subTitle2, descri
 -- Publicaciones para usuario2
 INSERT INTO posts (title, technologies, subTitle, description, media, user_id) VALUES
 ('Título de la publicación 1 para usuario2', 'Tecnologías de la publicación 1 para usuario2', 'Subtítulo de la publicación 1 para usuario2', 'Descripción de la publicación 1 para usuario2', 'https://beige-jeanelle-25.tiiny.site/', 2),
-('Título de la publicación 2 para usuario2', 'Tecnologías de la publicación 2 para usuario2', 'Subtítulo de la publicación 2 para usuario2', 'Descripción de la publicación 2 para usuario2', 'https://res.cloudinary.com/dnc3btlfa/image/upload/v1708161685/HackUDC/kh7nkvjxdk97zugeottu.gif', 2);
+('Título de la publicación 2 para usuario2', 'Tecnologías de la publicación 2 para usuario2', 'Subtítulo de la publicación 2 para usuario2', 'Design a virtual reality experience for a fashion show, allowing users to attend and explore the latest collections from the comfort of their homes. Consider interactive elements and immersive visuals to enhance the overall experience', 'https://res.cloudinary.com/dnc3btlfa/image/upload/v1708161685/HackUDC/kh7nkvjxdk97zugeottu.gif', 2);
 
 
 -- Publicaciones para usuario3

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './postGrid.css'; // Asegúrate de importar el archivo CSS correspondiente
+import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
+import './PostGrid.css';
 
 function PostGrid() {
     const [posts, setPosts] = useState([]);
@@ -7,21 +8,22 @@ function PostGrid() {
     useEffect(() => {
         fetch('http://localhost:8080/api/posts')
             .then(response => response.json())
-            .then(data => setPosts(data))
+            .then(data => setPosts(data.slice(0, 8)))
             .catch(error => console.error('Error fetching posts:', error));
     }, []);
 
     return (
-        <div className='post-grid-container'>
+        <div className="post-grid-container">
             {posts.map((post, index) => (
-                <div key={index} className='post-grid-item'>
-                    <h3>{post.title}</h3>
-                    <p>{post.description}</p>
-                </div>
+                <Link key={index} to={`/posts/${post.id}`} className={`Post${index + 1}`}>
+                    <img src={post.media} alt="Post Media" className="post-image" />
+                    <h1>{post.user.username}</h1>
+                    <h2>{post.title}</h2>
+                    <p>{post.description.length > 160 ? `${post.description.substring(0, 160)}...` : post.description}</p>
+                </Link>
             ))}
-            {Array.from({ length: 2 }).map((_, index) => (
-                <div key={index} className='post-grid-placeholder'></div>
-            ))}
+            <div className="Blank1"></div>
+            <div className="Blank2"></div>
         </div>
     );
 }
