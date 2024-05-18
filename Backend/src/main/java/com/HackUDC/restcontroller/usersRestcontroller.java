@@ -41,4 +41,10 @@ public class usersRestcontroller {
         usersService.deleteUser(userId);
         return "User Deleted";
     }
+
+    @GetMapping("/users/random")
+    public List<userModel> getRandomUsers() {
+        return usersService.getRandomUsers();
+    }
+
 }

@@ -1,10 +1,11 @@
 -- Insertar usuarios
-INSERT INTO users (username, password, email, profilePic, headerPic) VALUES
-('Alex Suarez', 'contraseña1', 'usuario1@example.com', 'ruta/a/imagen1.jpg', 'ruta/a/imagen2.jpg'),
-('usuario2', 'contraseña2', 'usuario2@example.com', 'ruta/a/imagen3.jpg', 'ruta/a/imagen4.jpg'),
-('usuario3', 'contraseña3', 'usuario3@example.com', 'ruta/a/imagen5.jpg', 'ruta/a/imagen6.jpg'),
-('usuario4', 'contraseña4', 'usuario4@example.com', 'ruta/a/imagen7.jpg', 'ruta/a/imagen8.jpg'),
-('usuario5', 'contraseña5', 'usuario5@example.com', 'ruta/a/imagen9.jpg', 'ruta/a/imagen10.jpg');
+INSERT INTO users (username, password, email, bio, profilePic, headerPic, country) VALUES
+('Alex Suarez', 'contraseña1', 'usuario1@example.com', '¡Hola! Soy Alex Suarez, un apasionado Diseñador con un amor profundo por la creatividad y la tecnología. Me considero un eterno soñador que se dedica a convertir ideas innovadoras en experiencias digitales asombrosas. Mi enfoque se basa en fusionar diseño y funcionalidad para crear soluciones impactantes y atractivas.', 'ruta/a/imagen1.jpg', 'ruta/a/imagen2.jpg', 'España'),
+('usuario2', 'contraseña2', 'usuario2@example.com', 'Biografía del usuario 2.', 'ruta/a/imagen3.jpg', 'ruta/a/imagen4.jpg', 'México'),
+('usuario3', 'contraseña3', 'usuario3@example.com', 'Biografía del usuario 3.', 'ruta/a/imagen5.jpg', 'ruta/a/imagen6.jpg', 'Argentina'),
+('usuario4', 'contraseña4', 'usuario4@example.com', 'Biografía del usuario 4.', 'ruta/a/imagen7.jpg', 'ruta/a/imagen8.jpg', 'Colombia'),
+('usuario5', 'contraseña5', 'usuario5@example.com', 'Biografía del usuario 5.', 'ruta/a/imagen9.jpg', 'ruta/a/imagen10.jpg', 'Chile');
+
 
 -- Insertar publicaciones
 -- Publicaciones para usuario1

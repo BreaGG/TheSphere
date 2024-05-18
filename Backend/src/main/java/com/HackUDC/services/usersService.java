@@ -1,5 +1,6 @@
 package com.HackUDC.services;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,4 +32,11 @@ public class usersService {
         Optional<userModel> userOptional = userRepository.findById(userId);
         return userOptional.orElse(null);
     }
+
+    public List<userModel> getRandomUsers() {
+        List<userModel> allUsers = userRepository.findAll();
+        Collections.shuffle(allUsers);
+        return allUsers.subList(0, 3); 
+    }
+    
 }

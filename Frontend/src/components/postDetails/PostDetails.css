@@ -57,13 +57,13 @@
 
 }
 
-.PostBody {
+.UserBody {
     width: 80%;
     border-right: 2px solid var(--negro);
     margin: 1%;
 }
 
-.PostBody img{
+.UserBody img{
     width: 90%;
     
 }

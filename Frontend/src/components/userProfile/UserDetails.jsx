@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
 import Footer from '../footer/footer';
+import "./UserDetails.css"
+import RandomUsers from '../randomUsers/RandomUsers';
 
 function UserDetails() {
     const { id } = useParams();
@@ -21,11 +23,22 @@ function UserDetails() {
     return (
         <section>
             <Navbar/>
-            <div>
-                <h1>User Details</h1>
-                <p>Username: {user.username}</p>
-                <p>Email: {user.email}</p>
-            </div>
+            <div className="user-details">
+                <div className='banner'>
+                    <h1>{user.username}</h1>
+                    <img src={user.headerPic} alt="Header Pic" />
+                    </div>
+                    <article>
+                        <div className='UserBody'>
+                            <h1>{user.username}</h1>
+                            <h3>{user.email}</h3>
+                            <h2>{user.country}</h2>
+                            <p>{user.bio}</p>
+                            <img src={user.profilePic} alt="Profile Pic" />
+                        </div>
+                        <RandomUsers/>
+                    </article>
+                </div>
             <Footer/>
         </section>
         

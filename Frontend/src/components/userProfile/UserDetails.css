@@ -1,0 +1,87 @@
+.user-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    border-top: 2px solid var(--negro);
+    border-left: 2px solid var(--negro);
+    margin-bottom: -5%;
+}
+
+.user-details .banner {
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.user-details .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    height: 225.226px;
+    width: 100%;
+    z-index: 1;
+}
+
+.user-details .banner h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    color: var(--naranja);
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    z-index: 2;
+}
+
+.user-details h1 {
+    color: var(--naranja);
+    color: #FF503F;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.user-details article {
+    border-top: 2px solid var(--negro);
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+.PostBody {
+    width: 80%;
+    border-right: 2px solid var(--negro);
+    margin: 1%;
+}
+
+.PostBody img{
+    width: 90%;
+    
+}
+
+.asideUser {
+    width: 20%;
+    height: 100%;
+    margin: 1%;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
