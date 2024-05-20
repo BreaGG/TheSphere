@@ -171,4 +171,10 @@
     filter: brightness(30%);
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    transition: .2s linear;
+}
+
+.project img:hover {
+    filter: brightness(10%);
+    transition: .2s linear;
 }

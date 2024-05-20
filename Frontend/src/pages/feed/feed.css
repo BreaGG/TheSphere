@@ -31,6 +31,7 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    transition: .2s linear;
 }
 
 .left-container .post h1{
@@ -61,6 +62,17 @@
     filter: saturate(0%);
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    transition: .2s linear;
+}
+
+.left-container .post img:hover{
+    filter: saturate(30%);
+    transition: .2s linear;
+}
+
+.right-container .post img:hover{
+    filter: saturate(30%);
+    transition: .2s linear;
 }
 
 .right-container .post p{

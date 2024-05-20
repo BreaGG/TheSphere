@@ -96,6 +96,7 @@
     aspect-ratio: 1 / 1; 
     object-fit: cover;
     max-width: 100%; 
+    transition: .2s linear;
 }
 
 .Post1 h2,
@@ -112,6 +113,7 @@
     aspect-ratio: 16 / 9;
     object-fit: cover;
     max-width: 100%; 
+    transition: .2s linear;
 }
 
 
@@ -122,4 +124,18 @@
 .Post6 img,
 .Post8 img {
     filter: saturate(0);
+    transition: .2s linear;
 }
+
+.Post1 img:hover,
+.Post2 img:hover,
+.Post3 img:hover,
+.Post7 img:hover,
+.Post4 img:hover,
+.Post5 img:hover,
+.Post6 img:hover,
+.Post8 img:hover {
+    filter: saturate(30%);
+    transition: .2s linear;
+}
+
