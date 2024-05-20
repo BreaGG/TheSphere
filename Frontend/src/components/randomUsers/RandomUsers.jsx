@@ -12,7 +12,7 @@ function RandomUsers() {
     }, []);
 
     return (
-        <div className='asideUser'>
+        <div className='userContainer'>
             <h2>FEATURED USERS</h2>
             {randomUsers.map(user => (
                 <Link to={`/users/${user.id}`} key={user.id} className='user-link'>

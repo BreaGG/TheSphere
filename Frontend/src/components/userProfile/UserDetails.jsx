@@ -62,7 +62,9 @@ function UserDetails() {
                             ))}
                         </ul>
                     </div>
-                    <RandomUsers />
+                    <div className='asideUser'>
+                        <RandomUsers/>
+                    </div>
                 </article>
             </div>
             <Footer />

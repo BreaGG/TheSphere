@@ -1,20 +1,21 @@
 .Login {
     background-image: url(../../assets/img/background.png);
     background-size: cover;
-    height: 100vh;
+    height: 98vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.Login div {
+.topNav {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0;
+    top: 9rem;
+    position: absolute;
 }
 
 .Login div a{

@@ -1,26 +1,49 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom';
 import LogoSphere from '../../assets/img/SPHERE.svg';
 import './../login/login.css';
 
 function Register() {
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
+    const [country, setCountry] = useState('');
+    const [error, setError] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log('Username:', username);
-        console.log('Password:', password);
-        console.log('Email:', email);
-        setUsername('');
-        setPassword('');
-        setEmail('');
+
+        const newUser = {
+            username,
+            password,
+            email,
+            country,
+        };
+
+        try {
+            const response = await fetch('http://localhost:8080/api/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            });
+
+            if (response.ok) {
+                navigate('/feed');
+            } else {
+                setError('Error registering user');
+            }
+        } catch (error) {
+            console.error('Error registering user:', error);
+            setError('An error occurred while registering');
+        }
     };
 
     return (
         <section className='Login'>
-            <div>
+            <div className='topNav'>
                 <Link to="/"><img src={LogoSphere} alt="" /></Link>
                 <Link className='sphereButton' to="/">SING IN</Link>
             </div>
@@ -61,14 +84,26 @@ function Register() {
                             placeholder='**********'
                         />
                     </label>
+                    <label>
+                        COUNTRY:
+                        <br />
+                        <input
+                            type="text"
+                            value={country}
+                            onChange={(e) => setCountry(e.target.value)}
+                            required
+                            placeholder='Country'
+                        />
+                    </label>
+                    {error && <p className="error">{error}</p>}
                     <br />
-                    <Link to="/feed"><button className='joinButton' type="submit">JOIN NOW!</button></Link>
-                    <Link className='text-b' to="/login">ALREDY HAVE AN ACCOUNT? LOG IN!</Link>
+                    <button className='joinButton' type="submit">JOIN NOW!</button>
+                    <Link className='text-b' to="/login">ALREADY HAVE AN ACCOUNT? LOG IN!</Link>
                     <div className="social-buttons">
-                    <button className="social-button facebook">Sign up with Facebook</button>
-                    <button className="social-button google">Sign up with Google</button>
-                    <button className="social-button twitter">Sign up with Twitter</button>
-                </div>
+                        <button className="social-button facebook">Sign up with Facebook</button>
+                        <button className="social-button google">Sign up with Google</button>
+                        <button className="social-button twitter">Sign up with Twitter</button>
+                    </div>
                 </form>
                 
                 <p className='bottom-margin'> Software is a great combination between artistry and engineering. When you finally get done and get to appreciate what you have done it is like a part of yourself that you've put together. I think a lot of the people here feel that way. - Bill gates</p>
@@ -78,4 +113,3 @@ function Register() {
 }
 
 export default Register;
-

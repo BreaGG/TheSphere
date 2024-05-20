@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import './PostDetails.css';
 import Navbar from '../navbar/navbar';
 import Footer from '../footer/footer';
+import RandomUsers from '../randomUsers/RandomUsers';
 
 function PostDetails() {
     const { id } = useParams();
@@ -40,16 +41,19 @@ function PostDetails() {
                         <img src={post.media} alt="Post Media" />
                     </div>
                     <div className='asideUser'>
-                        <div className='user'>
-                            <img src={post.user.profilePic} className='ProfilePic' alt="Profile Pic" />
-                            <div className='userInfo'>
-                                <h3>{post.user.username}</h3>
-                                <p>{post.technologies}</p>
+                        <div className='userContainer'>
+                            <div className='user'>
+                                <img src={post.user.profilePic} className='ProfilePic' alt="Profile Pic" />
+                                <div className='userInfo'>
+                                    <h3>{post.user.username}</h3>
+                                    <p>{post.technologies}</p>
+                                </div>
                             </div>
-                        </div>
-                        <Link to={`/users/${post.user.id}`}>
+                            <Link to={`/users/${post.user.id}`}>
                             <button>REACH OUT!</button>
-                        </Link>
+                            </Link>
+                        </div>
+                        <RandomUsers/>
                     </div>
                 </article>
             </div>

@@ -17,7 +17,7 @@ function Login() {
 
     return (
         <section className='Login'>
-            <div>
+            <div className='topNav'>
                 <Link to="/"><img src={LogoSphere} alt="" /></Link>
                 <Link className='sphereButton' to="/">SING IN</Link>
             </div>

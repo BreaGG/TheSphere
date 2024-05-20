@@ -119,4 +119,11 @@
     align-items: center;
     justify-content: center;
     margin: 5%;
+    transition: .2s linear;
+}
+
+.loadMoreButton:hover{
+    background-color: var(--negro);
+    color: var(--blanco);
+    transition: .2s linear;
 }
