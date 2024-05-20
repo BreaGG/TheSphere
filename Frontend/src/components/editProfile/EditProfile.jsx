@@ -78,8 +78,9 @@ function EditProfile() {
 
     return (
         <section>
+            <Navbar/>
             <div className="edit-profile">
-                <h2>Edit Profile</h2>
+                <h1>UPDATE YOUR <span>PROFILE</span></h1>
                 <form onSubmit={handleSubmit}>
                     <label>
                         Username:
@@ -143,6 +144,7 @@ function EditProfile() {
                     <button type="submit">Save Changes</button>
                 </form>
             </div>
+            <Footer/>
         </section>
         
     );

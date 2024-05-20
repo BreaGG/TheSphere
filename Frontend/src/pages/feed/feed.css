@@ -127,3 +127,22 @@
     color: var(--blanco);
     transition: .2s linear;
 }
+
+.right-containerMobile{
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+
+    .left-container {
+        display: none;
+    }
+
+    .right-container {
+        width: 100%;
+    }
+
+    .right-container .post{
+        width: 90%;
+    }
+}

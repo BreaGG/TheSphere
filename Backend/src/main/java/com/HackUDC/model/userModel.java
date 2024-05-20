@@ -26,22 +26,22 @@ public class userModel {
     @Column(length = 16, unique = true)
     private String username;
 
-    @Column(length = 16, unique = true)
+    @Column(length = 16)
     private String password;
 
     @Column(length = 255, unique = true)
     private String email;
 
-    @Column(unique = true)
+    @Column()
     private String country;
 
-    @Column(columnDefinition = "TEXT", length = 255, unique = true, nullable = true)
+    @Column(columnDefinition = "TEXT", length = 255, nullable = true)
     private String bio;
 
-    @Column(unique = true, nullable = true)
+    @Column(nullable = true)
     private String profilePic;
 
-    @Column(unique = true, nullable = true)
+    @Column(nullable = true)
     private String headerPic;
 
     @JsonIgnore

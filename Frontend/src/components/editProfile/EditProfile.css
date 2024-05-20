@@ -1,42 +1,80 @@
 .edit-profile {
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
+    padding: 2rem;
+    border: 2px solid var(--negro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.edit-profile h2 {
+.edit-profile h1 {
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 3rem;
 }
 
 .edit-profile form {
     display: flex;
     flex-direction: column;
+    width: 80%;
+    gap: 1rem;
+}
+
+.edit-profile input::placeholder{
+    color: var(--negro);
 }
 
 .edit-profile label {
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--naranja);
 }
 
-.edit-profile input, .edit-profile textarea {
+.edit-profile input {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--negro);
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: none;
+    border-bottom: 2px solid var(--negro);
+    background: none;
+    width: 80%;
+}
+
+.edit-profile textarea {
+    color: var(--negro);
+    border: 2px solid var(--negro);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 80%;
+    height: 20vh;
+    background: none;
+    transition: .2 linear;
+}
+
+.edit-profile textarea:focus {
+    outline:none;
 }
 
 .edit-profile button {
     padding: 10px;
-    background-color: #007bff;
+    background-color: var(--naranja);
     color: white;
+    font-size: 1rem;
+    font-weight: 700;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
+    transition: .2s linear;
 }
 
 .edit-profile button:hover {
-    background-color: #0056b3;
+    background-color: var(--negro);
+    transition: .2s linear;
 }

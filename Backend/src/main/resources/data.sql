@@ -4,8 +4,14 @@ INSERT INTO users (username, password, email, bio, profilePic, headerPic, countr
 ('Marco Rossi', 'contraseña2', 'usuario2@example.com', 'Biografía del usuario 2.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/etdloictcibumnn5zsso', 'ruta/a/imagen4.jpg', 'México'),
 ('Javier Galiñanes', 'contraseña3', 'usuario3@example.com', 'Biografía del usuario 3.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/iwcu1x3lp9xh4yrnj5bt', 'ruta/a/imagen6.jpg', 'Argentina'),
 ('Teo Gallego', 'contraseña4', 'usuario4@example.com', 'Hola chavales soy Teo.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/jowj9hsqy0ji7bjilbuz', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/fbdxi8g5duz63egpv9c0', 'Francia'),
-('Lola Bermudez', 'contraseña5', 'usuario5@example.com', 'Biografía del usuario 5.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/lrxuaopivyguobr8tdmn', 'ruta/a/imagen10.jpg', 'Chile');
-
+('Lola Bermudez', 'contraseña5', 'usuario5@example.com', 'Biografía del usuario 5.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/lrxuaopivyguobr8tdmn', 'ruta/a/imagen10.jpg', 'Chile'),
+('Adriano Fric', 'contrachele', 'chele@mail.com', 'Soy chele chavales como estamos.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/qkrzgxntpcddfujeub0x', 'ruta/a/imagen16.jpg', 'Spain'),
+('Manuel Casal', 'contramanu', 'manu@mail.com', 'Acabana Racing.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/yrfhrqvr5m7qltbbzjle', 'ruta/a/imagen16.jpg', 'Spain'),
+('Gustavo Nieto', 'contragus', 'gus@mail.com', 'A mi no me da la lu yo soy la lu gusilu.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/y1zh9san8r1ns4vmyfk4', 'ruta/a/imagen16.jpg', 'Venezuela'),
+('Carmen Faginas', 'contramela', 'mela@mail.com', 'Hola soy Mela!', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/fq2ghkimwjonhe0mtirt', 'ruta/a/imagen16.jpg', 'Spain'),
+('Lucia Parra', 'contraina', 'ina@mail.com', 'Hola soy Lucia!', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/wg85di8piznmnfh0mqtt', 'ruta/a/imagen16.jpg', 'Spain'),
+('Malena Fariña', 'contramalena', 'malena@mail.com', 'MaryMuffin para los amigos, la que pinta sudaderas en ByeMels', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/yortz5esfdudnl9daqmr', 'ruta/a/imagen16.jpg', 'Turquia'),
+('Alejandro Brea', '123456', 'brea@mail.com', 'Jeje soy yo.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/jkicsldr5dzih432gfyw', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/lhztro6kubixafkjazap', 'Spain');
 
 -- Insertar publicaciones
 -- Publicaciones para usuario1

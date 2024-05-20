@@ -17,9 +17,11 @@ function Feed() {
             .catch(error => console.error('Error fetching posts:', error));
     }, []);
 
-    const handleShowMore = () => {
+    const handleShowMore = (event) => {
+        event.stopPropagation(); 
         setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 3);
     };
+    
 
     const filteredPosts = posts.filter(post =>
         post.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -71,9 +73,11 @@ function Feed() {
                 </div>
             </div>
             {visiblePosts < filteredPosts.length && (
-                <button className='loadMoreButton' onClick={handleShowMore}>
-                    LOAD MORE
-                </button>
+                <div className='loadMoreButtonContainer' onClick={handleShowMore}>
+                    <button className='loadMoreButton'>
+                        LOAD MORE
+                    </button>
+                </div>
             )}
             <PostGrid/>
             <Footer />
