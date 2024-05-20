@@ -35,13 +35,13 @@ public class userModel {
     @Column(unique = true)
     private String country;
 
-    @Column(columnDefinition = "TEXT", length = 255, unique = true)
+    @Column(columnDefinition = "TEXT", length = 255, unique = true, nullable = true)
     private String bio;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = true)
     private String profilePic;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = true)
     private String headerPic;
 
     @JsonIgnore

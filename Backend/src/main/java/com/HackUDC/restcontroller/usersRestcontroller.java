@@ -1,9 +1,8 @@
 package com.HackUDC.restcontroller;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,12 +10,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.HackUDC.dtos.UserDetailsDTO;
 import com.HackUDC.model.userModel;
 import com.HackUDC.services.usersService;
+
+import lombok.Data;
+
 import com.HackUDC.repositories.userRepository;
+
+@Data
+class LoginRequest {
+    private String email;
+    private String password;
+}
 
 @RestController
 @RequestMapping("/api")
@@ -66,4 +76,13 @@ public class usersRestcontroller {
         return usersService.getRandomUsers();
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<userModel> loginUser(@RequestBody LoginRequest loginRequest) {
+        userModel user = usersService.authenticateUser(loginRequest.getEmail(), loginRequest.getPassword());
+        if (user != null) {
+            return ResponseEntity.ok(user);
+        } else {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid email or password");
+        }
+    }
 }

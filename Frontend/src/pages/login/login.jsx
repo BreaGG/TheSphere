@@ -1,25 +1,47 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; 
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { UserContext } from '../../contexts/UserContext';
 import LogoSphere from '../../assets/img/SPHERE.svg';
 import './login.css';
 
 function Login() {
-    const [username, setUsername] = useState('');
+    const navigate = useNavigate();
+    const { login } = useContext(UserContext);
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log('Username:', username);
-        console.log('Password:', password);
-        setUsername('');
-        setPassword('');
+
+        try {
+            const response = await fetch('http://localhost:8080/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                const user = await response.json();
+                login(user);
+                navigate('/feed');
+            } else {
+                const errorData = await response.json();
+                setError(errorData.message || 'An error occurred while logging in');
+            }
+        } catch (error) {
+            console.error('Error logging in:', error);
+            setError('An error occurred while logging in');
+        }
     };
 
     return (
         <section className='Login'>
             <div className='topNav'>
                 <Link to="/"><img src={LogoSphere} alt="" /></Link>
-                <Link className='sphereButton' to="/">SING IN</Link>
+                <Link className='sphereButton' to="/">SIGN IN</Link>
             </div>
             <article>
                 <p className='p'>Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things.- Steve Jobs</p>
@@ -29,9 +51,9 @@ function Login() {
                         EMAIL:
                         <br />
                         <input
-                            type="text"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             required
                             placeholder='EXAMPLE@EMAIL.COM'
                         />
@@ -48,11 +70,11 @@ function Login() {
                         />
                     </label>
                     <br />
-                    <Link to="/feed"><button className='joinButton' type="submit">JOIN NOW!</button></Link>
-                    <Link className='text-b' to="/register">DON'T HAVE AN ACCOUNT? SING IN!</Link>
+                    {error && <p className="error">{error}</p>}
+                    <button className='joinButton' type="submit">JOIN NOW!</button>
+                    <Link className='text-b' to="/register">DON'T HAVE AN ACCOUNT? SIGN IN!</Link>
                 </form>
-                
-                <p className='bottom-margin'> Software is a great combination between artistry and engineering. When you finally get done and get to appreciate what you have done it is like a part of yourself that you've put together. I think a lot of the people here feel that way. - Bill gates</p>
+                <p className='bottom-margin'>Software is a great combination between artistry and engineering. When you finally get done and get to appreciate what you have done it is like a part of yourself that you've put together. I think a lot of the people here feel that way. - Bill Gates</p>
             </article>
         </section>
     );

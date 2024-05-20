@@ -53,4 +53,9 @@ public class usersService {
         List<userModel> users = userRepository.findAll();
         return UserDetailsDTO.fromUserModels(users);
     }
+
+    public userModel authenticateUser(String email, String password) {
+        Optional<userModel> userOptional = userRepository.findByEmailAndPassword(email, password);
+        return userOptional.orElse(null);
+    }
 }

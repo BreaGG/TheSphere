@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { UserContext } from '../../contexts/UserContext';
 import LogoSphere from '../../assets/img/SPHERE.svg';
 import './navbar.css';
 
 function Navbar({ setSearchTerm }) {
     const [searchInput, setSearchInput] = useState('');
+    const { user } = useContext(UserContext);
 
     const handleChange = (event) => {
         setSearchInput(event.target.value);
@@ -12,7 +14,6 @@ function Navbar({ setSearchTerm }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // console.log('Submit:', searchInput); console log para depurar y ver si recogia bien el valor
         setSearchTerm(searchInput);
         setSearchInput('');
     };
@@ -20,7 +21,7 @@ function Navbar({ setSearchTerm }) {
     return (
         <nav>
             <NavLink to="/feed">
-                <img src={LogoSphere} alt="" />
+                <img src={LogoSphere} alt="Logo Sphere" />
             </NavLink>
             <NavLink className="navButton" to="/feed">
                 FOR YOU
@@ -44,7 +45,13 @@ function Navbar({ setSearchTerm }) {
             <NavLink className="shareButton" to="/">
                 SHARE YOUR WORK!
             </NavLink>
-            <NavLink to="/">profilepic</NavLink>
+            {user ? (
+                <NavLink to={`/users/${user.id}`}>
+                    <img src={user.profilePic} alt="Profile" className="ProfilePic" />
+                </NavLink>
+            ) : (
+                <NavLink to="/login">LOGIN</NavLink>
+            )}
         </nav>
     );
 }

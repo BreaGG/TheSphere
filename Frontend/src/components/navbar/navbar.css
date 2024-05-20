@@ -19,6 +19,10 @@ nav {
     transition: .2s linear;
 }
 
+nav .ProfilePic {
+    width: 32%;
+}
+
 .navButton:hover {
     color: var(--blanco);
     border: 3px solid var(--naranja);
