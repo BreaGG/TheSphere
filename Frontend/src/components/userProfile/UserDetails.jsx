@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
 import Footer from '../footer/footer';
 import "./UserDetails.css";
 import RandomUsers from '../randomUsers/RandomUsers';
+import { UserContext } from '../../contexts/UserContext';
 
 function UserDetails() {
     const { id } = useParams();
+    const { user: loggedInUser } = useContext(UserContext);
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -63,6 +65,11 @@ function UserDetails() {
                         </ul>
                     </div>
                     <div className='asideUser'>
+                        {loggedInUser && loggedInUser.id === user.id && (
+                            <Link to={`/edit-profile/${user.id}`} className="edit-profile-button">
+                                Edit Profile
+                            </Link>
+                        )}
                         <RandomUsers/>
                     </div>
                 </article>

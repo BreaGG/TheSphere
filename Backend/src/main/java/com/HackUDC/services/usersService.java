@@ -58,4 +58,21 @@ public class usersService {
         Optional<userModel> userOptional = userRepository.findByEmailAndPassword(email, password);
         return userOptional.orElse(null);
     }
+
+    public userModel updateUser(Long id, userModel updatedUser) {
+        Optional<userModel> optionalUser = userRepository.findById(id);
+        if (optionalUser.isPresent()) {
+            userModel user = optionalUser.get();
+            user.setUsername(updatedUser.getUsername());
+            user.setEmail(updatedUser.getEmail());
+            user.setCountry(updatedUser.getCountry());
+            user.setBio(updatedUser.getBio());
+            user.setProfilePic(updatedUser.getProfilePic());
+            user.setHeaderPic(updatedUser.getHeaderPic());
+            return userRepository.save(user);
+        } else {
+            return null;
+        }
+    }
 }
+

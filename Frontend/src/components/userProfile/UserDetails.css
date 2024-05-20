@@ -178,3 +178,24 @@
     filter: brightness(10%);
     transition: .2s linear;
 }
+
+.edit-profile-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: var(--naranja);
+    color: var(--blanco);
+    text-align: center;
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.edit-profile-button:hover {
+    background-color: var(--negro);
+    color: var(--blanco);
+    transition: .2s linear;
+}
