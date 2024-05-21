@@ -42,3 +42,17 @@ INSERT INTO posts (title, technologies, subTitle, description, media, user_id) V
 ('Chatas Ibiza', 'Tecnologías de la publicación 1 para usuario5', 'Subtítulo de la publicación 1 para usuario5', 'Unique jewelry brand specializing in earrings and necklaces inspired by the beauty of Ibiza. The website design aims to showcase the artisanal craftsmanship of each piece, providing users with an immersive and delightful shopping experience.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/q9bmdf44kickt4vi6qws', 5),
 ('Luminous Installation', 'Tecnologías de la publicación 2 para usuario5', 'Subtítulo de la publicación 2 para usuario5', 'We will develop a generative application using complex algorithms to create dreamlike and surreal landscapes in real-time. Users can interact with the application to explore imaginary worlds, inspiring creativity and providing a visually unique and stimulating experience.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/oujghbq4sriehzdwr424', 5),
 ('Virtual FashionWeek', 'Tecnologías de la página web favorita de Mónica', 'Subtítulo de la página web favorita de Mónica', 'Design a virtual reality experience for a fashion show, allowing users to attend and explore the latest collections from the comfort of their homes. Consider interactive elements and immersive visuals to enhance the overall experience', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/fvraqsm7fyzhihvlt8xl', 5);
+
+-- Insertar comentarios
+INSERT INTO comments (content, user_id, post_id) VALUES
+('¡Increíble proyecto! Las Islas Canarias son un paraíso que merece ser mostrado.', 6, 1),
+('El diseño del sitio web accesible suena fantástico. ¡Buena suerte!', 1, 2),
+('La aplicación de hábitos ecológicos me parece una excelente idea. ¡Sigamos cuidando el planeta!', 7, 3),
+('Me encanta la idea de un asistente de salud personal impulsado por IA. ¡Muy innovador!', 4, 4),
+('La marca y el empaque de productos sostenibles es un paso importante hacia un futuro más verde.', 2, 5),
+('¡Una galería de arte en realidad virtual sería una experiencia impresionante!', 8, 6),
+('Una interfaz de automatización del hogar minimalista es justo lo que necesitamos para hacer nuestras vidas más fáciles.', 2, 7),
+('Seguir las tendencias del mercado de criptomonedas en tiempo real es esencial. ¡Gran idea!', 4, 8),
+('La marca de joyería inspirada en Ibiza es única. ¡Me encanta el concepto!', 1, 9),
+('Las instalaciones luminosas siempre añaden un toque mágico a cualquier entorno. ¡Buen trabajo!', 4, 10),
+('Una semana de la moda virtual es el futuro. ¡No puedo esperar para ver cómo resulta!', 10, 11);

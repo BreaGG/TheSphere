@@ -21,7 +21,7 @@
     width: 100%;
     height: auto;
     display: block;
-    filter: grayscale(100%);
+    filter: grayscale(100%) brightness(80%);
     height: 270px;
     width: 100%;
     z-index: 1;
@@ -139,4 +139,24 @@
 .userInfo {
     display: flex;
     flex-direction: column;
+}
+
+.comentario {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 1rem;
+    margin-top: 5%;
+}
+
+.comentario .ProfilePic {
+    width: 20%;
+}
+.comentario p {
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.comentario p span{
+    font-weight: 700;
 }

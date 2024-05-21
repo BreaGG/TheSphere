@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './PostForm.css';
 import { UserContext } from '../../contexts/UserContext';
 import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
@@ -21,6 +20,7 @@ function PostForm() {
         user: user // Asignamos el usuario loggeado al post
     });
     const [error, setError] = useState('');
+    const [fieldSets, setFieldSets] = useState(1); // Estado para controlar los conjuntos de campos mostrados
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -28,6 +28,10 @@ function PostForm() {
             ...prevPostData,
             [name]: value
         }));
+    };
+
+    const handleAddFields = () => {
+        setFieldSets(prevFieldSets => prevFieldSets + 1);
     };
 
     const handleSubmit = async (e) => {
@@ -54,7 +58,7 @@ function PostForm() {
 
     return (
         <section>
-            <Navbar/>
+            <Navbar />
             <div className='edit-profile'>
                 <form onSubmit={handleSubmit}>
                     <h1>SHARE YOUR <span>WORK</span></h1>
@@ -74,31 +78,42 @@ function PostForm() {
                         Description:
                         <textarea name="description" value={postData.description} onChange={handleChange} required />
                     </label>
-                    <label>
-                        Subtitle 2:
-                        <input type="text" name="subTitle2" value={postData.subTitle2} onChange={handleChange} />
-                    </label>
-                    <label>
-                        Description 2:
-                        <textarea name="description2" value={postData.description2} onChange={handleChange} />
-                    </label>
-                    <label>
-                        Subtitle 3:
-                        <input type="text" name="subTitle3" value={postData.subTitle3} onChange={handleChange} />
-                    </label>
-                    <label>
-                        Description 3:
-                        <textarea name="description3" value={postData.description3} onChange={handleChange} />
-                    </label>
+                    {fieldSets >= 2 && (
+                        <>
+                            <label>
+                                Subtitle 2:
+                                <input type="text" name="subTitle2" value={postData.subTitle2} onChange={handleChange} />
+                            </label>
+                            <label>
+                                Description 2:
+                                <textarea name="description2" value={postData.description2} onChange={handleChange} />
+                            </label>
+                        </>
+                    )}
+                    {fieldSets >= 3 && (
+                        <>
+                            <label>
+                                Subtitle 3:
+                                <input type="text" name="subTitle3" value={postData.subTitle3} onChange={handleChange} />
+                            </label>
+                            <label>
+                                Description 3:
+                                <textarea name="description3" value={postData.description3} onChange={handleChange} />
+                            </label>
+                        </>
+                    )}
                     <label>
                         Media URL:
                         <input type="text" name="media" value={postData.media} onChange={handleChange} required />
                     </label>
                     {error && <p className="error">{error}</p>}
+                    {fieldSets < 3 && (
+                        <button type="button" onClick={handleAddFields}>Add More Fields</button>
+                    )}
                     <button type="submit">Submit Post</button>
                 </form>
             </div>
-            <Footer/>
+            <Footer />
         </section>
     );
 }

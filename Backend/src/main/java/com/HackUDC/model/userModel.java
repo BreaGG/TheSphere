@@ -48,4 +48,7 @@ public class userModel {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<postModel> posts;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<commentModel> comments;
 }

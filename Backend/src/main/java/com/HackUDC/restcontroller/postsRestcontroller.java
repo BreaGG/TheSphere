@@ -1,9 +1,12 @@
 package com.HackUDC.restcontroller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.HackUDC.model.commentModel;
 import com.HackUDC.model.postModel;
 import com.HackUDC.services.postsService;
 
@@ -33,15 +37,36 @@ public class postsRestcontroller {
     }
 
     @GetMapping("/posts/{id}")
-    public Optional<postModel> getPostsById(@PathVariable("id") Long postId) {
-        return postsService.getPostsById(postId);
+    public ResponseEntity<?> getPostsById(@PathVariable("id") Long postId) {
+    Optional<postModel> postOptional = postsService.getPostsById(postId);
+    if (postOptional.isPresent()) {
+        postModel post = postOptional.get();
+        List<commentModel> comments = post.getComments();
+        Map<String, Object> response = new HashMap<>();
+        response.put("post", post);
+        response.put("comments", comments);
+        return ResponseEntity.ok(response);
+    } else {
+        return ResponseEntity.notFound().build();
     }
+}
 
     @DeleteMapping("/posts/{id}")
-    public String deletePost(@PathVariable("id") Long postId) {
+    public ResponseEntity<?> deletePost(@PathVariable("id") Long postId) {
+    Optional<postModel> postOptional = postsService.getPostsById(postId);
+    if (postOptional.isPresent()) {
+        postModel post = postOptional.get();
+        List<commentModel> comments = post.getComments();
         postsService.deletePost(postId);
-        return "Post deleted successfully";
+        Map<String, Object> response = new HashMap<>();
+        response.put("post", post);
+        response.put("comments", comments);
+        return ResponseEntity.ok(response);
+    } else {
+        return ResponseEntity.notFound().build();
     }
+}
+
 
     // @GetMapping("/posts/{userId}")
     // public List<postModel> getPostByUserId(@PathVariable("userId") Long userId) {
