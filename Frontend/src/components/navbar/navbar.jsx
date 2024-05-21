@@ -42,7 +42,7 @@ function Navbar({ setSearchTerm }) {
                     />
                 </form>
             </div>
-            <NavLink className="shareButton" to="/">
+            <NavLink className="shareButton" to="/create-post">
                 SHARE YOUR WORK!
             </NavLink>
             {user ? (

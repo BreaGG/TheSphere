@@ -8,6 +8,7 @@ import PostDetails from './components/postDetails/PostDetails';
 import UserDetails from './components/userProfile/UserDetails';
 import Contact from './pages/contact/contact';
 import EditProfile from './components/editProfile/EditProfile';
+import PostForm from './pages/PostForm/PostForm';
 import './App.css';
 import { UserProvider } from './contexts/UserContext';
 
@@ -24,6 +25,7 @@ function App() {
                     <Route exact path="/users/:id" element={<UserDetails />} />
                     <Route exact path="/contact" element={<Contact />} />
                     <Route path="/edit-profile/:id" element={<EditProfile />} />
+                    <Route path="/create-post" element={<PostForm />} />
                 </Routes>
             </BrowserRouter>
         </UserProvider>

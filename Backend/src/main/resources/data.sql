@@ -11,6 +11,7 @@ INSERT INTO users (username, password, email, bio, profilePic, headerPic, countr
 ('Carmen Faginas', 'contramela', 'mela@mail.com', 'Hola soy Mela!', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/fq2ghkimwjonhe0mtirt', 'ruta/a/imagen16.jpg', 'Spain'),
 ('Lucia Parra', 'contraina', 'ina@mail.com', 'Hola soy Lucia!', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/wg85di8piznmnfh0mqtt', 'ruta/a/imagen16.jpg', 'Spain'),
 ('Malena Fariña', 'contramalena', 'malena@mail.com', 'MaryMuffin para los amigos, la que pinta sudaderas en ByeMels', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/yortz5esfdudnl9daqmr', 'ruta/a/imagen16.jpg', 'Turquia'),
+('Sergio Sanchez', 'contrasergios', 'sergios@mail.com', 'Corro porque vi la peli de Forrest Gump de pequeño y el corria y aun no pare de correr se nota que soy de la sierra chaval.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/onr6cc0atiglpn1arx5e', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/e56hoqvvj81hnwsokr2u', 'Navalcarnero'),
 ('Alejandro Brea', '123456', 'brea@mail.com', 'Jeje soy yo.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/jkicsldr5dzih432gfyw', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/lhztro6kubixafkjazap', 'Spain');
 
 -- Insertar publicaciones
