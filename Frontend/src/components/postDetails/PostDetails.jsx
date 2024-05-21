@@ -4,7 +4,7 @@ import './PostDetails.css';
 import Navbar from '../navbar/navbar';
 import Footer from '../footer/footer';
 import { UserContext } from '../../contexts/UserContext';
-import CommentsSection from '../CommentsSection';
+import CommentsSection from '../CommentsSection/CommentsSection';
 
 function PostDetails() {
     const { id } = useParams();
@@ -12,7 +12,7 @@ function PostDetails() {
     const [comments, setComments] = useState([]);
     const { user: loggedInUser } = useContext(UserContext);
 
-    useEffect(() => {
+    const fetchPostDetails = () => {
         fetch(`http://localhost:8080/api/posts/${id}`)
             .then(response => response.json())
             .then(data => {
@@ -20,6 +20,10 @@ function PostDetails() {
                 setComments(data.comments);
             })
             .catch(error => console.error('Error fetching post details:', error));
+    };
+
+    useEffect(() => {
+        fetchPostDetails();
     }, [id]);
 
     if (!post) {
@@ -61,7 +65,17 @@ function PostDetails() {
                                 </Link>
                             </div>
                         )}
-                        <CommentsSection postId={id} initialComments={comments} />
+                        <div className="commentsContainer">
+                            {comments.map(comment => (
+                                <div className="comentario" key={comment.id}>
+                                    <img src={comment.user.profilePic} className='ProfilePic' alt="" />
+                                    <div>
+                                        <p><span>{comment.user.username}</span> - {comment.content}</p>
+                                    </div>
+                                </div>
+                            ))}
+                            <CommentsSection postId={id} refreshComments={fetchPostDetails} />
+                        </div>
                     </div>
                 </article>
             </div>

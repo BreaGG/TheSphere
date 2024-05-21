@@ -1,14 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { UserContext } from '../contexts/UserContext';
+import React, { useState, useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext';
+import './CommentsSection.css'
 
-function CommentsSection({ postId, initialComments }) {
+function CommentsSection({ postId, refreshComments }) {
     const { user: loggedInUser } = useContext(UserContext);
-    const [comments, setComments] = useState(initialComments);
     const [newComment, setNewComment] = useState('');
-
-    useEffect(() => {
-        setComments(initialComments);
-    }, [initialComments]);
 
     const handleCommentChange = (event) => {
         setNewComment(event.target.value);
@@ -37,30 +33,28 @@ function CommentsSection({ postId, initialComments }) {
         })
         .then(response => response.json())
         .then(data => {
-            setComments([...comments, data]);
             setNewComment('');
+            refreshComments(); 
         })
         .catch(error => console.error('Error posting comment:', error));
     };
 
     return (
-        <div className="commentsContainer">
-            {comments.map(comment => (
-                <div className="comentario" key={comment.id}>
-                    <img src={comment.user.profilePic} className='ProfilePic' alt="" />
-                    <div>
-                        <p><span>{comment.user.username}</span> - {comment.content}</p>
-                    </div>
+        <div>
+            <form onSubmit={handleSubmitComment} className="comment-form">
+                <div className="comment-form-header">
+                    {loggedInUser && loggedInUser.profilePic && (
+                        <img src={loggedInUser.profilePic} className='ProfilePic' alt="Profile Pic" />
+                    )}
+                    <input 
+                        value={newComment} 
+                        onChange={handleCommentChange} 
+                        placeholder="Your comment" 
+                        required
+                    />
+                    <button type="submit">POST</button>
                 </div>
-            ))}
-            <form onSubmit={handleSubmitComment}>
-                <textarea 
-                    value={newComment} 
-                    onChange={handleCommentChange} 
-                    placeholder="Write a comment..." 
-                    required
-                />
-                <button type="submit">Submit</button>
+                
             </form>
         </div>
     );

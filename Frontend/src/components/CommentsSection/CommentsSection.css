@@ -1,0 +1,44 @@
+.comment-form-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 30%;
+    border-top: 2px solid var(--negro);
+    padding-top: 2rem;
+}
+
+
+.comment-form-header .ProfilePic {
+    width: 14%;
+}
+
+.comment-form-header input {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--negro);
+    border: none;
+    background: none;
+    width: 80%;
+}
+
+.comment-form-header input:focus {
+    outline: none;
+}
+
+.comment-form-header button {
+    padding: 10px;
+    color: var(--negro);
+    background: none;
+    font-size: 1rem;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.comment-form-header button:hover {
+    color: var(--naranja);
+    transition: .2s linear;
+}

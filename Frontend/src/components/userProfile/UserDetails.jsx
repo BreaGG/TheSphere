@@ -12,6 +12,7 @@ function UserDetails() {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [refreshTrigger, setRefreshTrigger] = useState(0);
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/users/${id}`)
@@ -24,6 +25,7 @@ function UserDetails() {
             .then(data => {
                 setUser(data);
                 setLoading(false);
+                setRefreshTrigger(prev => prev + 1); 
             })
             .catch(error => {
                 setError(error.message);
@@ -70,7 +72,7 @@ function UserDetails() {
                                 Edit Profile
                             </Link>
                         )}
-                        <RandomUsers/>
+                        <RandomUsers refreshTrigger={refreshTrigger} />
                     </div>
                 </article>
             </div>

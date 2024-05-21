@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function RandomUsers() {
+function RandomUsers({ refreshTrigger }) {
     const [randomUsers, setRandomUsers] = useState([]);
 
     useEffect(() => {
@@ -9,7 +9,7 @@ function RandomUsers() {
             .then(response => response.json())
             .then(data => setRandomUsers(data))
             .catch(error => console.error('Error fetching random users:', error));
-    }, []);
+    }, [refreshTrigger]);
 
     return (
         <div className='userContainer'>
