@@ -67,7 +67,9 @@ function PostDetails() {
                         <div className="commentsContainer">
                             {comments.map(comment => (
                                 <div className="comentario" key={comment.id}>
-                                    <img src={comment.user.profilePic} className='ProfilePic' alt="" />
+                                    <Link to={`/users/${comment.user.id}`}>
+                                        <img src={comment.user.profilePic} className='ProfilePic' alt={comment.user.username} />
+                                    </Link>
                                     <div>
                                         <p><span>{comment.user.username}</span> - {comment.content}</p>
                                     </div>

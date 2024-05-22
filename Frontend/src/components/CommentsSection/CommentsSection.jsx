@@ -58,7 +58,7 @@ function CommentsSection({ postId, refreshComments }) {
                         ref={textareaRef}
                         value={newComment}
                         onChange={handleCommentChange}
-                        placeholder="Your comment"
+                        placeholder="Your comment..."
                         required
                         rows="1"
                         className="comment-textarea"

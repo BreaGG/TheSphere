@@ -45,6 +45,7 @@ function PostForm() {
         const formData = new FormData();
         formData.append('file', imageFile);
         formData.append('upload_preset', 'TheSphere');
+        formData.append('folder', 'TheSphere/Posts'); 
 
         try {
             const response = await axios.post(`https://api.cloudinary.com/v1_1/dnc3btlfa/image/upload`, formData, {
