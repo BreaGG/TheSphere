@@ -1,7 +1,7 @@
 .comment-form-header {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     gap: 1rem;
     width: 100%;
     margin-top: 30%;
@@ -14,17 +14,22 @@
     width: 14%;
 }
 
-.comment-form-header input {
-    font-size: 1rem;
+.comment-textarea {
+    flex-grow: 1;
+    padding: 0.5rem;
+    resize: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--negro);
     border: none;
     background: none;
-    width: 80%;
+    width: 100%;
     border-bottom: 2px solid var(--negro);
 }
 
-.comment-form-header input:focus {
+.comment-textarea:focus {
     outline: none;
 }
 

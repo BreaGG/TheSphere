@@ -1,10 +1,18 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import { UserContext } from '../../contexts/UserContext';
-import './CommentsSection.css'
+import './CommentsSection.css';
 
 function CommentsSection({ postId, refreshComments }) {
     const { user: loggedInUser } = useContext(UserContext);
     const [newComment, setNewComment] = useState('');
+    const textareaRef = useRef(null);
+
+    useEffect(() => {
+        if (textareaRef.current) {
+            textareaRef.current.style.height = "auto";
+            textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+        }
+    }, [newComment]);
 
     const handleCommentChange = (event) => {
         setNewComment(event.target.value);
@@ -34,7 +42,7 @@ function CommentsSection({ postId, refreshComments }) {
         .then(response => response.json())
         .then(data => {
             setNewComment('');
-            refreshComments(); 
+            refreshComments();
         })
         .catch(error => console.error('Error posting comment:', error));
     };
@@ -46,16 +54,17 @@ function CommentsSection({ postId, refreshComments }) {
                     {loggedInUser && loggedInUser.profilePic && (
                         <img src={loggedInUser.profilePic} className='ProfilePic' alt="Profile Pic" />
                     )}
-                    <input 
-                        type="text"
-                        value={newComment} 
-                        onChange={handleCommentChange} 
-                        placeholder="Your comment" 
+                    <textarea
+                        ref={textareaRef}
+                        value={newComment}
+                        onChange={handleCommentChange}
+                        placeholder="Your comment"
                         required
+                        rows="1"
+                        className="comment-textarea"
                     />
                     <button type="submit">POST</button>
                 </div>
-                
             </form>
         </div>
     );

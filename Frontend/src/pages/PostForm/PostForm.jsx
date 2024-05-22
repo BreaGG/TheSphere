@@ -1,8 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { UserContext } from '../../contexts/UserContext';
-import Navbar from '../../components/navbar/navbar';
-import Footer from '../../components/footer/footer';
 
 function PostForm() {
     const navigate = useNavigate();
@@ -17,17 +16,12 @@ function PostForm() {
         subTitle3: '',
         description3: '',
         media: '',
-        category: 'DESIGN', 
-        user: user 
+        category: 'DESIGN',
+        user: user
     });
     const [error, setError] = useState('');
     const [fieldSets, setFieldSets] = useState(1);
-
-    useEffect(() => {
-        if (!user) {
-            navigate('/login');
-        }
-    }, [user, navigate]);
+    const [imageFile, setImageFile] = useState(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -37,19 +31,55 @@ function PostForm() {
         }));
     };
 
+    const handleFileChange = (e) => {
+        setImageFile(e.target.files[0]);
+    };
+
     const handleAddFields = () => {
         setFieldSets(prevFieldSets => prevFieldSets + 1);
     };
 
+    const uploadImageToCloudinary = async () => {
+        const formData = new FormData();
+        formData.append('file', imageFile);
+        formData.append('upload_preset', 'TheSphere');
+
+        try {
+            const response = await axios.post(`https://api.cloudinary.com/v1_1/dnc3btlfa/image/upload`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            return response.data.secure_url;
+        } catch (error) {
+            console.error('Error uploading image to Cloudinary:', error);
+            throw error;
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!user) {
+            setError('You must be logged in to submit a post.');
+            return;
+        }
+
         try {
+            let mediaUrl = '';
+
+            if (imageFile) {
+                mediaUrl = await uploadImageToCloudinary();
+            }
+
+            const postDataWithMediaUrl = { ...postData, media: mediaUrl };
+
             const response = await fetch('http://localhost:8080/api/posts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(postData),
+                body: JSON.stringify(postDataWithMediaUrl),
             });
 
             if (response.ok) {
@@ -109,11 +139,11 @@ function PostForm() {
                         </>
                     )}
                     <label>
-                        Media URL:
-                        <input type="text" name="media" value={postData.media} onChange={handleChange} required />
+                        Media:
+                        <input type="file" accept="image/*" onChange={handleFileChange} required />
                     </label>
                     <label>
-                        CHOOSE SIDE
+                        Category:
                         <select name="category" value={postData.category} onChange={handleChange} required>
                             <option value="DESIGN">DESIGN</option>
                             <option value="DEVELOPMENT">DEVELOPMENT</option>
