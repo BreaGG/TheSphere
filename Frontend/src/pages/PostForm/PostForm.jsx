@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../../contexts/UserContext';
+import './PostForm.css'; 
 
 function PostForm() {
     const navigate = useNavigate();
@@ -20,6 +21,7 @@ function PostForm() {
         user: user
     });
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false); 
     const [fieldSets, setFieldSets] = useState(1);
     const [imageFile, setImageFile] = useState(null);
 
@@ -65,6 +67,8 @@ function PostForm() {
             return;
         }
 
+        setLoading(true); 
+
         try {
             let mediaUrl = '';
 
@@ -90,6 +94,8 @@ function PostForm() {
             }
         } catch (error) {
             setError('An error occurred while submitting the post');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -150,10 +156,11 @@ function PostForm() {
                         </select>
                     </label>
                     {error && <p className="error">{error}</p>}
+                    {loading && <p className="loading">Uploading and submitting your post...</p>}
                     {fieldSets < 3 && (
                         <button type="button" onClick={handleAddFields}>Add More Fields</button>
                     )}
-                    <button type="submit">Submit Post</button>
+                    <button type="submit" disabled={loading}>Submit Post</button>
                 </form>
             </div>
         </section>
