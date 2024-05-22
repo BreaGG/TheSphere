@@ -1,12 +1,12 @@
 package com.HackUDC.model;
 
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,13 +25,13 @@ public class postModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 255,  nullable = false)
+    @Column(length = 255, nullable = false)
     private String title;
 
     @Column(nullable = false)
     private String technologies;
 
-    @Column(length = 255,  nullable = false)
+    @Column(length = 255, nullable = false)
     private String subTitle;
 
     @Column(columnDefinition = "TEXT", nullable = false)
@@ -46,7 +46,7 @@ public class postModel {
     @Column(length = 255, nullable = true)
     private String subTitle3;
 
-    @Column(columnDefinition = "TEXT",  nullable = true)
+    @Column(columnDefinition = "TEXT", nullable = true)
     private String description3;
 
     @Column(nullable = false)
@@ -59,4 +59,8 @@ public class postModel {
     @JsonIgnore
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<commentModel> comments;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = true)
+    private PostCategory category;
 }

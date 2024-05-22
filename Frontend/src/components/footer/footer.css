@@ -2,21 +2,23 @@ footer {
     border-top: 3px solid var(--negro);
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    align-items: center;
+    align-items: start;
     justify-content: center;
     place-items: center;
     text-align: center;
     margin: 5%;
+    padding-top: 3rem;
 }
 
 footer div {
     display: flex;
     flex-direction: column;
     text-align: left;
+    align-items: left;
+    margin-top: 0;
 }
 
 footer h1 {
-    margin-top: 35%;
     color: var(--naranja);
     margin-bottom: 0;
 }

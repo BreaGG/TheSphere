@@ -17,10 +17,11 @@ function PostForm() {
         subTitle3: '',
         description3: '',
         media: '',
-        user: user // Asignamos el usuario loggeado al post
+        category: 'DESIGN', 
+        user: user 
     });
     const [error, setError] = useState('');
-    const [fieldSets, setFieldSets] = useState(1); // Estado para controlar los conjuntos de campos mostrados
+    const [fieldSets, setFieldSets] = useState(1);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -105,6 +106,13 @@ function PostForm() {
                     <label>
                         Media URL:
                         <input type="text" name="media" value={postData.media} onChange={handleChange} required />
+                    </label>
+                    <label>
+                        Category:
+                        <select name="category" value={postData.category} onChange={handleChange} required>
+                            <option value="DESIGN">DESIGN</option>
+                            <option value="DEVELOPMENT">DEVELOPMENT</option>
+                        </select>
                     </label>
                     {error && <p className="error">{error}</p>}
                     {fieldSets < 3 && (

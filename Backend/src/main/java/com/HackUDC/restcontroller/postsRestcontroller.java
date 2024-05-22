@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.HackUDC.dtos.PostDTO;
+import com.HackUDC.model.PostCategory;
 import com.HackUDC.model.commentModel;
 import com.HackUDC.model.postModel;
 import com.HackUDC.services.postsService;
@@ -27,8 +29,9 @@ public class postsRestcontroller {
     postsService postsService;
 
     @GetMapping("/posts")
-    public List<postModel> getPosts() {
-        return postsService.getPosts();
+    public List<PostDTO> getPosts() {
+        List<postModel> posts = postsService.getPosts();
+        return PostDTO.fromPostModels(posts);
     }
 
     @PostMapping("/posts")
@@ -76,5 +79,15 @@ public class postsRestcontroller {
     @GetMapping("/posts/random")
     public List<postModel> getRandomPosts() {
         return postsService.getRandomPosts();
+    }
+
+    @GetMapping("/posts/design")
+    public List<postModel> getDesignPosts() {
+        return postsService.getPostsByCategory(PostCategory.DESIGN);
+    }
+
+    @GetMapping("/posts/development")
+    public List<postModel> getDevelopmentPosts() {
+        return postsService.getPostsByCategory(PostCategory.DEVELOPMENT);
     }
 }

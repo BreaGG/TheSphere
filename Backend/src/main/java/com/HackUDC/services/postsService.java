@@ -4,10 +4,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.HackUDC.model.PostCategory;
 import com.HackUDC.model.postModel;
 import com.HackUDC.repositories.postRepository;
 
@@ -44,5 +46,11 @@ public class postsService {
         }
         Collections.shuffle(allPosts);
         return allPosts.subList(0, Math.min(allPosts.size(), 8)); 
+    }
+
+    public List<postModel> getPostsByCategory(PostCategory category) {
+        return postRepository.findAll().stream()
+                .filter(post -> post.getCategory() == category)
+                .collect(Collectors.toList());
     }
 }

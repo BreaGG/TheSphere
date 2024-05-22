@@ -5,13 +5,13 @@ import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
 import PostGrid from '../../components/postGrid/postGrid';
 
-function Feed() {
+function FeedDev() {
     const [posts, setPosts] = useState([]);
     const [visiblePosts, setVisiblePosts] = useState(3);
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/posts')
+        fetch('http://localhost:8080/api/posts/development')
             .then(response => response.json())
             .then(data => setPosts(data))
             .catch(error => console.error('Error fetching posts:', error));
@@ -85,4 +85,4 @@ function Feed() {
     );
 }
 
-export default Feed;
+export default FeedDev;

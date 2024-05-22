@@ -26,10 +26,10 @@ function Navbar({ setSearchTerm }) {
             <NavLink className="navButton" to="/feed">
                 FOR YOU
             </NavLink>
-            <NavLink className="navButton" to="/feed">
+            <NavLink className="navButton" to="/feedDesign">
                 DESIGN
             </NavLink>
-            <NavLink className="navButton" to="/feed">
+            <NavLink className="navButton" to="/feedDev">
                 DEVS
             </NavLink>
             <div className="search-container">
