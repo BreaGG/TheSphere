@@ -13,6 +13,9 @@ import FeedDesing from './pages/feed/feedDesing';
 import FeedDev from './pages/feed/feedDev';
 import Footer from './components/footer/footer';
 import Navbar from './components/navbar/navbar';
+import About from './components/about/about';
+import FAQ from './components/faq/faq';
+import CodeOfConduct from './components/codeOfConduct/codeOfConduct';
 import './App.css';
 import { UserProvider } from './contexts/UserContext';
 import { useState } from 'react';
@@ -36,6 +39,9 @@ function App() {
                     <Route exact path="/contact" element={<Contact />} />
                     <Route path="/edit-profile/:id" element={<EditProfile />} />
                     <Route path="/create-post" element={<PostForm />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/faq" element={<FAQ />} />
+                    <Route path="/code-of-conduct" element={<CodeOfConduct />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>

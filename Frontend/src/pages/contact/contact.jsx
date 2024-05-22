@@ -1,12 +1,9 @@
 import React from 'react';
 import './contact.css'
-import Navbar from '../../components/navbar/navbar';
-import Footer from '../../components/footer/footer';
 
 function Contact() {
     return (
         <section>
-            <Navbar/>
             <div className="contact-container">
                 <h1>Contact Us</h1>
                 <p>If you have any questions or feedback, feel free to contact us!</p>
@@ -19,7 +16,6 @@ function Contact() {
                     <p>+123-456-7890</p>
                 </div>
             </div>
-            <Footer/>
         </section>
     );
 }

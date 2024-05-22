@@ -1,0 +1,36 @@
+.code-of-conduct-container {
+    text-align: center;
+    padding: 5rem;
+    margin-top: -5%;
+}
+
+.code-of-conduct-content {
+    border: 2px solid var(--negro);
+    padding: 20px;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.code-of-conduct-container h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--naranja);
+}
+
+.code-of-conduct-container h2 {
+    text-transform: uppercase;
+    color: var(--naranja);
+}
+
+.code-of-conduct-container p {
+    line-height: 1.6;
+}
+
+.code-of-conduct-container a {
+    color: var(--naranja);
+    text-decoration: none;
+}
+
+.code-of-conduct-container a:hover {
+    text-decoration: underline;
+}

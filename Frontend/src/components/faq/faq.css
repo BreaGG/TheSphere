@@ -1,0 +1,31 @@
+.faq-container {
+    text-align: center;
+    padding: 5rem;
+    margin-top: -5%;
+}
+
+.faq-info {
+    border: 2px solid var(--negro);
+    padding: 20px;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+}
+
+.faq-container h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--naranja);
+}
+
+.faq-container h3 {
+    text-transform: uppercase;
+    color: var(--naranja);
+}
+
+.faq-container p {
+    line-height: 1.6;
+}

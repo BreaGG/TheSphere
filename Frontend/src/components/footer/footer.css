@@ -14,7 +14,8 @@ footer div {
     display: flex;
     flex-direction: column;
     text-align: left;
-    align-items: left;
+    align-items: start;
+    height: 100%;
     margin-top: 0;
 }
 
@@ -27,6 +28,7 @@ footer div a{
     text-decoration: none;
     color: var(--negro);
     font-weight: 700;
+    transform: skewX(-10deg);
 }
 
 footer div a:hover{
