@@ -47,6 +47,7 @@ function CommentsSection({ postId, refreshComments }) {
                         <img src={loggedInUser.profilePic} className='ProfilePic' alt="Profile Pic" />
                     )}
                     <input 
+                        type="text"
                         value={newComment} 
                         onChange={handleCommentChange} 
                         placeholder="Your comment" 

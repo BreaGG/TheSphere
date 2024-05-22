@@ -15,7 +15,7 @@ function Feed({ searchTerm }) {
     }, []);
 
     const handleShowMore = (event) => {
-        event.stopPropagation(); 
+        event.stopPropagation();
         setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 3);
     };
 

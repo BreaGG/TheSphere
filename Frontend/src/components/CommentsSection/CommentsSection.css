@@ -21,6 +21,7 @@
     border: none;
     background: none;
     width: 80%;
+    border-bottom: 2px solid var(--negro);
 }
 
 .comment-form-header input:focus {
@@ -39,6 +40,7 @@
 }
 
 .comment-form-header button:hover {
+    background: none;
     color: var(--naranja);
     transition: .2s linear;
 }

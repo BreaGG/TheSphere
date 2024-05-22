@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
 import LogoSphere from '../../assets/img/SPHERE.svg';
 import './navbar.css';
@@ -7,6 +7,7 @@ import './navbar.css';
 function Navbar({ setSearchTerm }) {
     const [searchInput, setSearchInput] = useState('');
     const { user } = useContext(UserContext);
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         setSearchInput(event.target.value);
@@ -15,7 +16,7 @@ function Navbar({ setSearchTerm }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         setSearchTerm(searchInput);
-        setSearchInput('');
+        navigate('/');
     };
 
     return (
