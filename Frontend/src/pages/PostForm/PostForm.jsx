@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
 import Navbar from '../../components/navbar/navbar';
@@ -22,6 +22,12 @@ function PostForm() {
     });
     const [error, setError] = useState('');
     const [fieldSets, setFieldSets] = useState(1);
+
+    useEffect(() => {
+        if (!user) {
+            navigate('/login');
+        }
+    }, [user, navigate]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -59,7 +65,6 @@ function PostForm() {
 
     return (
         <section>
-            <Navbar />
             <div className='edit-profile'>
                 <form onSubmit={handleSubmit}>
                     <h1>SHARE YOUR <span>WORK</span></h1>
@@ -108,7 +113,7 @@ function PostForm() {
                         <input type="text" name="media" value={postData.media} onChange={handleChange} required />
                     </label>
                     <label>
-                        Category:
+                        CHOOSE SIDE
                         <select name="category" value={postData.category} onChange={handleChange} required>
                             <option value="DESIGN">DESIGN</option>
                             <option value="DEVELOPMENT">DEVELOPMENT</option>
@@ -121,7 +126,6 @@ function PostForm() {
                     <button type="submit">Submit Post</button>
                 </form>
             </div>
-            <Footer />
         </section>
     );
 }

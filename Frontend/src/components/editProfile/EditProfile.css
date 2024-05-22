@@ -78,3 +78,17 @@
     background-color: var(--negro);
     transition: .2s linear;
 }
+
+.edit-profile select {
+    width: 24%;
+    border: 2px solid var(--negro);
+    background: none;
+    font-size: 1rem;
+    color: var(--negro);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.edit-profile select:focus {
+    outline: none;
+}

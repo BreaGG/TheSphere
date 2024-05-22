@@ -3,6 +3,7 @@ nav {
     grid-template-columns: repeat(8, 1fr);
     align-items: center;
     justify-content: center;
+    place-items: center;
     text-align: center;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -39,6 +40,9 @@ nav .ProfilePic {
     font-weight: 700;
     font-size: 1.1rem;
     transition: .2s linear;
+    padding: 0.2rem;
+    margin-right: -20%;
+    width: 100%;
 }
 
 .shareButton a {
@@ -54,10 +58,11 @@ nav .ProfilePic {
 
 .search-container {
     grid-column: span 2;
+    width: 100%;
 }
 
 nav input[type="text"] {
-    width: 90%;
+    width: 100%;
     padding: 0.5rem;
     border: 2px solid var(--negro);
     background-color: var(--blanco);
@@ -69,4 +74,26 @@ nav input[type="text"] {
 
 input[type="text"]:focus {
     outline: none;
+}
+
+.sphereButton {
+    background-color: var(--naranja);
+    text-decoration: none;
+    color: var(--blanco);
+    width: 60%;
+    padding: 0.2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -1.8px;
+    text-transform: uppercase;
+    transition: .2s linear;
+}
+
+.sphereButton:hover{
+    background-color: var(--negro);
+    color: var(--blanco);
+    transition: .2s linear;
 }

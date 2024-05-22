@@ -32,7 +32,6 @@ function PostDetails() {
 
     return (
         <section>
-            <Navbar />
             <div className="post-details">
                 <div className='banner'>
                     <h1>{post.title}</h1>
@@ -57,7 +56,7 @@ function PostDetails() {
                                     <img src={post.user.profilePic} className='ProfilePic' alt="Profile Pic" />
                                     <div className='userInfo'>
                                         <h3>{post.user.username}</h3>
-                                        <p>{post.user.country}</p>
+                                        <p>{post.category} <br /> {post.user.country}</p>
                                     </div>
                                 </div>
                                 <Link to={`/users/${post.user.id}`}>
@@ -79,7 +78,6 @@ function PostDetails() {
                     </div>
                 </article>
             </div>
-            <Footer />
         </section>
     );
 }

@@ -43,7 +43,6 @@ function UserDetails() {
 
     return (
         <section>
-            <Navbar />
             <div className="user-details">
                 <div className='banner'>
                     <img src={user.headerPic} alt="Header Pic" />
@@ -76,7 +75,6 @@ function UserDetails() {
                     </div>
                 </article>
             </div>
-            <Footer />
         </section>
     );
 }

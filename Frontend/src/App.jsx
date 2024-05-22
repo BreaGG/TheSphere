@@ -15,17 +15,20 @@ import Footer from './components/footer/footer';
 import Navbar from './components/navbar/navbar';
 import './App.css';
 import { UserProvider } from './contexts/UserContext';
+import { useState } from 'react';
 
 function App() {
+    const [searchTerm, setSearchTerm] = useState('');
+
     return (
         <UserProvider>
             <BrowserRouter>
-            <Navbar/>
+                <Navbar setSearchTerm={setSearchTerm} />
                 <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route exact path="/feed" element={<Feed />} />
-                    <Route exact path="/feedDesign" element={<FeedDesing />} />
-                    <Route exact path="/feedDev" element={<FeedDev />} />
+                    {/* <Route exact path="/" element={<Home />} /> */}
+                    <Route exact path="/" element={<Feed searchTerm={searchTerm} />} />
+                    <Route exact path="/feedDesign" element={<FeedDesing searchTerm={searchTerm} />} />
+                    <Route exact path="/feedDev" element={<FeedDev searchTerm={searchTerm} />} />
                     <Route exact path="/login" element={<Login />} />
                     <Route exact path="/register" element={<Register />} />
                     <Route exact path="/posts/:id" element={<PostDetails />} />
@@ -34,7 +37,7 @@ function App() {
                     <Route path="/edit-profile/:id" element={<EditProfile />} />
                     <Route path="/create-post" element={<PostForm />} />
                 </Routes>
-                <Footer/>
+                <Footer />
             </BrowserRouter>
         </UserProvider>
     );

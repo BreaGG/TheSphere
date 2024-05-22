@@ -26,7 +26,7 @@ function Login() {
             if (response.ok) {
                 const user = await response.json();
                 login(user);
-                navigate('/feed');
+                navigate('/');
             } else {
                 const errorData = await response.json();
                 setError(errorData.message || 'An error occurred while logging in');
@@ -39,10 +39,10 @@ function Login() {
 
     return (
         <section className='Login'>
-            <div className='topNav'>
+            {/* <div className='topNav'>
                 <Link to="/"><img src={LogoSphere} alt="" /></Link>
                 <Link className='sphereButton' to="/">SIGN IN</Link>
-            </div>
+            </div> */}
             <article>
                 <p className='p'>Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things.- Steve Jobs</p>
                 <form onSubmit={handleSubmit}>

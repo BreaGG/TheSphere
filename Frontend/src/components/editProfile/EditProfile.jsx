@@ -78,7 +78,6 @@ function EditProfile() {
 
     return (
         <section>
-            <Navbar/>
             <div className="edit-profile">
                 <h1>UPDATE YOUR <span>PROFILE</span></h1>
                 <form onSubmit={handleSubmit}>
@@ -144,7 +143,6 @@ function EditProfile() {
                     <button type="submit">Save Changes</button>
                 </form>
             </div>
-            <Footer/>
         </section>
         
     );

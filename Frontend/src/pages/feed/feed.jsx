@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './feed.css';
-import Navbar from '../../components/navbar/navbar';
-import Footer from '../../components/footer/footer';
 import PostGrid from '../../components/postGrid/postGrid';
 
-function Feed() {
+function Feed({ searchTerm }) {
     const [posts, setPosts] = useState([]);
     const [visiblePosts, setVisiblePosts] = useState(3);
-    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         fetch('http://localhost:8080/api/posts')
@@ -21,7 +18,6 @@ function Feed() {
         event.stopPropagation(); 
         setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 3);
     };
-    
 
     const filteredPosts = posts.filter(post =>
         post.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -31,7 +27,6 @@ function Feed() {
 
     return (
         <section className='Feed'>
-            <Navbar setSearchTerm={setSearchTerm} />
             <div className="post-grid">
                 <div className="left-container">
                     {displayedPosts
@@ -80,7 +75,6 @@ function Feed() {
                 </div>
             )}
             <PostGrid/>
-            <Footer />
         </section>
     );
 }

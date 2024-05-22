@@ -20,10 +20,10 @@ function Navbar({ setSearchTerm }) {
 
     return (
         <nav>
-            <NavLink to="/feed">
+            <NavLink to="/">
                 <img src={LogoSphere} alt="Logo Sphere" />
             </NavLink>
-            <NavLink className="navButton" to="/feed">
+            <NavLink className="navButton" to="/">
                 FOR YOU
             </NavLink>
             <NavLink className="navButton" to="/feedDesign">
@@ -43,14 +43,14 @@ function Navbar({ setSearchTerm }) {
                 </form>
             </div>
             <NavLink className="shareButton" to="/create-post">
-                SHARE YOUR WORK!
+                SHARE YOUR WORK
             </NavLink>
             {user ? (
                 <NavLink to={`/users/${user.id}`}>
                     <img src={user.profilePic} alt="Profile" className="ProfilePic" />
                 </NavLink>
             ) : (
-                <NavLink to="/login">LOGIN</NavLink>
+                <NavLink className="sphereButton" to="/login">LOGIN</NavLink>
             )}
         </nav>
     );
