@@ -120,8 +120,6 @@ Antes de comenzar, asegúrese de tener instalados los siguientes componentes en 
 - Asegúrese de que el puerto 3306 de MySQL y los puertos 3000 y 8080 para las aplicaciones frontend y backend respectivamente, estén abiertos y disponibles.
 - Para personalizar la configuración del servidor de desarrollo o de la compilación, modifique los scripts en el archivo `package.json` y las propiedades en el archivo `pom.xml` y `application.properties`.
 
-Si tiene alguna pregunta o necesita asistencia adicional, no dude en contactar al equipo de soporte técnico.
-
 ## Uso de la Aplicación
 
 ### Registro e Inicio de Sesión
