@@ -15,7 +15,8 @@ INSERT INTO users (username, password, email, bio, profilePic, headerPic, countr
 ('Alejandro Brea', '123456', 'brea@mail.com', 'Jeje soy yo.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/jkicsldr5dzih432gfyw', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/lhztro6kubixafkjazap', 'Spain'),
 ('Anail Perez', 'contraanail', 'anail@mail.com', 'Hola soy Anail! Vivo en Vigo y soy muy bajita', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/qjwrmlft4r4vph2heiyp', 'ruta/a/imagen16.jpg', 'Vigo'),
 ('Marta Vilas', 'contramarta', 'marta@mail.com', 'Vivo en Santiago y juego al hockey mientras me saco una carrera!', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/g5qm3ugbme7fxsa7wbhr', 'ruta/a/imagen16.jpg', 'Santiago'),
-('Lucas Dann', 'contralucas', 'lucas@mail.com', 'Hey all! Im Lucas, ecology is my pasion and i want to share some projects to protect our planet', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/t1mlb5ovirt50cbud72v', 'ruta/a/imagen16.jpg', 'Holanda');
+('Lucas Dann', 'contralucas', 'lucas@mail.com', 'Hey all! Im Lucas, ecology is my pasion and i want to share some projects to protect our planet', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/t1mlb5ovirt50cbud72v', 'ruta/a/imagen16.jpg', 'Holanda'),
+('Irene Casal', 'contraire', 'ire@mail.com', 'Soy Irene', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/Usuarios/loga2nulmrjtzrhbfdrc', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/Usuarios/ccugzadwp5jy4krnog8t', 'Spain');
 
 -- Insertar publicaciones
 -- Publicaciones para usuario1

@@ -10,48 +10,117 @@ El proyecto se divide en dos partes principales:
 
 ## Instalación y Configuración
 
-### Requisitos Previos
-- Node.js
-- npm (Node Package Manager)
-- Java Development Kit (JDK)
-- Spring Boot
-- Base de datos MySQL (o cualquier otra base de datos soportada por Spring Boot)
+### Guía de Instalación para el Administrador
 
-### Configuración del Backend
-1. Clona el repositorio del backend.
-2. Configura la base de datos en `application.properties`.
-3. Construye y ejecuta el proyecto usando Spring Boot.
-4. Las siguientes dependencias de Maven son necesarias:
-    ```xml
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>
-    ```
+Esta guía detalla los pasos para la instalación y configuración de un proyecto compuesto por un frontend desarrollado con React y Vite, y un backend desarrollado con Spring Boot.
 
-### Configuración del Frontend
-1. Clona el repositorio del frontend.
-2. Navega al directorio del proyecto frontend.
-3. Instala las dependencias con el comando:
-    ```bash
-    npm install
-    ```
-4. Inicia la aplicación con:
-    ```bash
-    npm start
-    ```
+#### Requisitos Previos
+
+Antes de comenzar, asegúrese de tener instalados los siguientes componentes en su sistema:
+
+- Node.js (v16 o superior)
+- npm (v6 o superior)
+- JDK (Java Development Kit) 17
+- Maven (v3.6 o superior)
+- MySQL (o cualquier otra base de datos compatible con JDBC)
+
+#### Instalación del Frontend (React + Vite)
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/BreaGG/TheSphere
+   cd Fronted
+   ```
+
+2. **Instalar las dependencias:**
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+   Esto iniciará el servidor de desarrollo y la aplicación estará disponible en `http://localhost:3000`.
+
+4. **Compilar la aplicación para producción:**
+   ```bash
+   npm run build
+   ```
+
+5. **Previsualizar la aplicación compilada:**
+   ```bash
+   npm run preview
+   ```
+
+#### Instalación del Backend (Spring Boot)
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/BreaGG/TheSphere
+   cd Backend
+   ```
+
+2. **Configurar la base de datos:**
+   Cree una base de datos en MySQL y actualice el archivo `application.properties` en el proyecto Spring Boot con las credenciales de la base de datos.
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/mi_base_de_datos
+   spring.datasource.username=mi_usuario
+   spring.datasource.password=mi_contraseña
+   spring.jpa.hibernate.ddl-auto=update
+   ```
+
+3. **Compilar y ejecutar la aplicación:**
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+   ```
+   Esto iniciará el servidor backend y estará disponible en `http://localhost:8080`.
+
+#### Dependencias Utilizadas
+
+##### Frontend (`package.json`)
+
+- **Dependencies:**
+  - `axios`: ^1.7.2
+  - `cloudinary`: ^2.2.0
+  - `react`: ^18.2.0
+  - `react-dom`: ^18.2.0
+  - `react-router-dom`: ^6.23.1
+
+- **DevDependencies:**
+  - `@types/react`: ^18.2.66
+  - `@types/react-dom`: ^18.2.22
+  - `@vitejs/plugin-react`: ^4.2.1
+  - `eslint`: ^8.57.0
+  - `eslint-plugin-react`: ^7.34.1
+  - `eslint-plugin-react-hooks`: ^4.6.0
+  - `eslint-plugin-react-refresh`: ^0.4.6
+  - `vite`: ^5.2.0
+
+##### Backend (`pom.xml`)
+
+- **Spring Boot Dependencies:**
+  - `spring-boot-starter-actuator`
+  - `spring-boot-starter-data-jpa`
+  - `spring-boot-starter-thymeleaf`
+  - `spring-boot-starter-web`
+  - `thymeleaf-extras-springsecurity6`
+  - `spring-boot-devtools`
+  - `mysql-connector-j`
+  - `lombok`
+  - `spring-boot-starter-test`
+  - `spring-security-test`
+
+- **Plugins:**
+  - `spring-boot-maven-plugin`
+
+#### Notas Adicionales
+
+- Asegúrese de que el puerto 3306 de MySQL y los puertos 3000 y 8080 para las aplicaciones frontend y backend respectivamente, estén abiertos y disponibles.
+- Para personalizar la configuración del servidor de desarrollo o de la compilación, modifique los scripts en el archivo `package.json` y las propiedades en el archivo `pom.xml` y `application.properties`.
+
+Si tiene alguna pregunta o necesita asistencia adicional, no dude en contactar al equipo de soporte técnico.
 
 ## Uso de la Aplicación
 
@@ -128,9 +197,9 @@ INSERT INTO users (username, password, email, bio, profilePic, headerPic, countr
 
 #### Insertar Publicaciones
 ```sql
-INSERT INTO posts (title, technologies, subTitle, description, media, user_id) VALUES
-('Proyecto 1', 'React, Node.js', 'Subtítulo 1', 'Descripción 1', 'https://example.com/media1.jpg', 1),
-('Proyecto 2', 'Angular, Spring Boot', 'Subtítulo 2', 'Descripción 2', 'https://example.com/media2.jpg', 2);
+INSERT INTO posts (title, technologies, subTitle, description, media, user_id, category) VALUES
+('Proyecto 1', 'React, Node.js', 'Subtítulo 1', 'Descripción 1', 'https://example.com/media1.jpg', 1, 'DESIGN'),
+('Proyecto 2', 'Angular, Spring Boot', 'Subtítulo 2', 'Descripción 2', 'https://example.com/media2.jpg', 2, 'DEVELOPMENT');
 ```
 
 #### Insertar Comentarios
