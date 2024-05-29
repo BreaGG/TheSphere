@@ -10,4 +10,5 @@ import com.HackUDC.model.userModel;
 @Repository
 public interface userRepository extends JpaRepository<userModel, Long>{
     Optional<userModel> findByEmailAndPassword(String email, String password);
+
 }

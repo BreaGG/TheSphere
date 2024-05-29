@@ -44,6 +44,9 @@ public class userModel {
     @Column(nullable = true)
     private String headerPic;
 
+    @Column(nullable = true)
+    private String role; 
+
     @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<postModel> posts;

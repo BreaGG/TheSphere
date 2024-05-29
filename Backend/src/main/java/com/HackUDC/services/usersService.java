@@ -74,5 +74,9 @@ public class usersService {
             return null;
         }
     }
-}
 
+    public userModel findByEmailAndPassword(String email, String password) {
+        Optional<userModel> userOptional = userRepository.findByEmailAndPassword(email, password);
+        return userOptional.orElse(null);
+    }
+}

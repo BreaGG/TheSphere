@@ -1,7 +1,7 @@
 .Login {
     background-image: url(../../assets/img/background.png);
     background-size: cover;
-    height: 70vh;
+    height: 88vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +32,7 @@
     justify-content: center;
 }
 
-.Login article p {
+.Login article .p-sides {
     width: 20%;
     color: var(--blanco);
     font-weight: 700;
@@ -74,16 +74,46 @@
 }
 
 
-.Login article p.p {
+.Login article .p {
     margin-top: 14%; /* Añade un margen superior del 20% */
 }
 
-.Login article p.bottom-margin {
+.Login article .bottom-margin {
     margin-bottom: 14%; /* Añade un margen inferior del 20% */
+}
+
+.Login form input:focus {
+    outline: none;
 }
 
 .text-b {
     color: var(--negro);
     font-weight: bold;
     margin-top: 0.5%;
+}
+
+.error {
+    color: var(--naranja);
+    margin: 0;
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--fondo);
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }

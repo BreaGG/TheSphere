@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 import com.HackUDC.dtos.UserDetailsDTO;
 import com.HackUDC.model.userModel;
@@ -81,12 +80,16 @@ public class usersRestcontroller {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<userModel> loginUser(@RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
         userModel user = usersService.authenticateUser(loginRequest.getEmail(), loginRequest.getPassword());
         if (user != null) {
+            if (user.getEmail().equals("admin@mail.com") && user.getPassword().equals("admin")) {
+                user.setRole("admin");
+                usersService.saveUser(user); // Save user with updated role
+            }
             return ResponseEntity.ok(user);
         } else {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid email or password");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
 }

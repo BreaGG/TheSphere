@@ -10,6 +10,7 @@ function Register() {
     const [email, setEmail] = useState('');
     const [country, setCountry] = useState('');
     const [error, setError] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -31,7 +32,10 @@ function Register() {
             });
 
             if (response.ok) {
-                navigate('/feed');
+                setShowModal(true);
+                setTimeout(() => {
+                    navigate('/login');
+                }, 3000); // Redirigir después de 3 segundos
             } else {
                 setError('Error registering user');
             }
@@ -43,12 +47,8 @@ function Register() {
 
     return (
         <section className='Login'>
-            <div className='topNav'>
-                <Link to="/"><img src={LogoSphere} alt="" /></Link>
-                <Link className='sphereButton' to="/">SING IN</Link>
-            </div>
             <article>
-                <p className='p'>Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things.- Steve Jobs</p>
+                <p className='p p-sides'>Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things.- Steve Jobs</p>
                 <form onSubmit={handleSubmit}>
                     <h1>JOIN THE <span>SPHERE</span></h1>
                     <label>
@@ -95,19 +95,24 @@ function Register() {
                             placeholder='Country'
                         />
                     </label>
+                    <p className="">You will be able to add a picture before.</p>
                     {error && <p className="error">{error}</p>}
                     <br />
                     <button className='joinButton' type="submit">JOIN NOW!</button>
                     <Link className='text-b' to="/login">ALREADY HAVE AN ACCOUNT? LOG IN!</Link>
-                    <div className="social-buttons">
-                        <button className="social-button facebook">Sign up with Facebook</button>
-                        <button className="social-button google">Sign up with Google</button>
-                        <button className="social-button twitter">Sign up with Twitter</button>
-                    </div>
                 </form>
                 
-                <p className='bottom-margin'> Software is a great combination between artistry and engineering. When you finally get done and get to appreciate what you have done it is like a part of yourself that you've put together. I think a lot of the people here feel that way. - Bill gates</p>
+                <p className='bottom-margin p-sides'> Software is a great combination between artistry and engineering. When you finally get done and get to appreciate what you have done it is like a part of yourself that you've put together. I think a lot of the people here feel that way. - Bill Gates</p>
             </article>
+
+            {showModal && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <h2>Registered Successfully!</h2>
+                        <p>Redirecting to login...</p>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

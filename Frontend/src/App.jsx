@@ -16,6 +16,8 @@ import Navbar from './components/navbar/navbar';
 import About from './components/about/about';
 import FAQ from './components/faq/faq';
 import CodeOfConduct from './components/codeOfConduct/codeOfConduct';
+import AdminDashboard from './components/adminDashboard/AdminDashboard';
+import ProtectedRoute from './config/ProtectedRoute';
 import './App.css';
 import { UserProvider } from './contexts/UserContext';
 import { useState } from 'react';
@@ -42,6 +44,14 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/code-of-conduct" element={<CodeOfConduct />} />
+                    <Route
+                        path="/admin-dashboard"
+                        element={
+                            <ProtectedRoute adminOnly={true}>
+                                <AdminDashboard />
+                            </ProtectedRoute>
+                        }
+                    />
                 </Routes>
                 <Footer />
             </BrowserRouter>
