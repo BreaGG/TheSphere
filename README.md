@@ -87,6 +87,7 @@ Antes de comenzar, asegúrese de tener instalados los siguientes componentes en 
   - `react`: ^18.2.0
   - `react-dom`: ^18.2.0
   - `react-router-dom`: ^6.23.1
+  - `react-markdown`: 9.0.1
 
 - **DevDependencies:**
   - `@types/react`: ^18.2.66
