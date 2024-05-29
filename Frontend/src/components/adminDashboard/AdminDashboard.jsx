@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
+import ConfirmDeleteModal from '../confirmModal/ConfirmDeleteModal';
 import './AdminDashboard.css';
 
 function AdminDashboard() {
@@ -8,6 +9,9 @@ function AdminDashboard() {
     const navigate = useNavigate();
     const [users, setUsers] = useState([]);
     const [posts, setPosts] = useState([]);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [deleteType, setDeleteType] = useState('');
 
     useEffect(() => {
         if (!user || user.role !== 'admin') {
@@ -38,6 +42,27 @@ function AdminDashboard() {
         }
     };
 
+    const handleOpenModal = (item, type) => {
+        setSelectedItem(item);
+        setDeleteType(type);
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+        setSelectedItem(null);
+        setDeleteType('');
+    };
+
+    const handleConfirmDelete = async () => {
+        if (deleteType === 'user') {
+            await handleDeleteUser(selectedItem.id);
+        } else if (deleteType === 'post') {
+            await handleDeletePost(selectedItem.id);
+        }
+        handleCloseModal();
+    };
+
     const handleDeleteUser = async (userId) => {
         try {
             await fetch(`http://localhost:8080/api/users/${userId}`, {
@@ -61,31 +86,40 @@ function AdminDashboard() {
     };
 
     return (
-        <div className="admin-dashboard">
-            <h1>Admin Dashboard</h1>
-            <section>
-                <h2>Users</h2>
-                <ul>
-                    {users.map(user => (
-                        <li key={user.id}>
-                            {user.username} - {user.email}
-                            <button onClick={() => handleDeleteUser(user.id)}>Delete</button>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-            <section>
-                <h2>Posts</h2>
-                <ul>
-                    {posts.map(post => (
-                        <li key={post.id}>
-                            {post.title}
-                            <button onClick={() => handleDeletePost(post.id)}>Delete</button>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-        </div>
+        <section className="admin-dashboard">
+            <h1>Admin <span>Dashboard</span></h1>
+            <div className='contenido'>
+                <article>
+                    <h2>Users</h2>
+                    <ul>
+                        {users.map(user => (
+                            <li key={user.id}>
+                                {user.username} - {user.email}
+                                <button onClick={() => handleOpenModal(user, 'user')}>Delete</button>
+                            </li>
+                        ))}
+                    </ul>
+                </article>
+                <article>
+                    <h2>Posts</h2>
+                    <ul>
+                        {posts.map(post => (
+                            <li key={post.id}>
+                                {post.title}
+                                <button onClick={() => handleOpenModal(post, 'post')}>Delete</button>
+                            </li>
+                        ))}
+                    </ul>
+                </article>
+            </div>
+            <ConfirmDeleteModal
+                isOpen={modalOpen}
+                onClose={handleCloseModal}
+                onConfirm={handleConfirmDelete}
+                item={selectedItem}
+                type={deleteType}
+            />
+        </section>
     );
 }
 

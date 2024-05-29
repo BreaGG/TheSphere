@@ -1,14 +1,33 @@
 .admin-dashboard {
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .admin-dashboard h1 {
     text-align: center;
-    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 .admin-dashboard section {
     margin-bottom: 2rem;
+}
+
+.admin-dashboard .contenido {
+    display: flex;
+    flex-direction: row;
+    gap: 7rem;
+    padding: 3rem;
+    padding-top: 1rem;
+    margin: 1%;
+    border: 2px solid var(--negro);
+}
+
+.admin-dashboard article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .admin-dashboard h2 {
@@ -35,8 +54,10 @@
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    transition: .2s linear;
 }
 
 .admin-dashboard button:hover {
-    background-color: var(--naranja);
+    background-color: var(--negro);
+    transition: .2s linear;
 }

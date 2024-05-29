@@ -3,8 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../../contexts/UserContext';
 import './EditProfile.css';
-import Navbar from '../navbar/navbar';
-import Footer from '../footer/footer';
 
 function EditProfile() {
     const { id } = useParams();
