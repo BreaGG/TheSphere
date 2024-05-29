@@ -87,7 +87,9 @@ Antes de comenzar, asegúrese de tener instalados los siguientes componentes en 
   - `react`: ^18.2.0
   - `react-dom`: ^18.2.0
   - `react-router-dom`: ^6.23.1
-  - `react-markdown`: 9.0.1
+  - `react-markdown`: ^9.0.1
+  - `react-syntax-highlighter`: ^15.5.0
+  - `copy-to-clipboard`: ^3.3.3
 
 - **DevDependencies:**
   - `@types/react`: ^18.2.66

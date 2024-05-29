@@ -1,14 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { solarizedDarkAtom, solarizedlight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import copy from 'copy-to-clipboard';
 import './PostDetails.css';
 import { UserContext } from '../../contexts/UserContext';
 import CommentsSection from '../CommentsSection/CommentsSection';
-import { darcula, solarizedDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import { darkula } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 function PostDetails() {
     const { id } = useParams();
@@ -30,6 +28,29 @@ function PostDetails() {
         fetchPostDetails();
     }, [id]);
 
+    const CopyButton = ({ code }) => {
+        const [tooltipVisible, setTooltipVisible] = useState(false);
+        const timeoutRef = useRef(null);
+
+        const handleCopy = () => {
+            copy(code);
+            setTooltipVisible(true);
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = setTimeout(() => {
+                setTooltipVisible(false);
+            }, 2000);
+        };
+
+        return (
+            <div className="copy-button-container">
+                <button onClick={handleCopy} className="copy-button">
+                    Copy
+                </button>
+                {tooltipVisible && <span className="tooltip">Code copied to clipboard</span>}
+            </div>
+        );
+    };
+
     if (!post) {
         return <div>Loading...</div>;
     }
@@ -50,35 +71,43 @@ function PostDetails() {
                             children={post.description}
                             components={{
                                 code({node, inline, className, children, ...props}) {
-                                    const match = /language-(\w+)/.exec(className || '')
+                                    const match = /language-(\w+)/.exec(className || '');
+                                    const code = String(children).replace(/\n$/, '');
                                     return !inline && match ? (
-                                        <SyntaxHighlighter
-                                            children={String(children).replace(/\n$/, '')}
-                                            style={dracula}
-                                            language={match[1]}
-                                            PreTag="div"
-                                            {...props}
-                                        />
+                                        <div style={{ position: 'relative' }}>
+                                            <SyntaxHighlighter
+                                                children={code}
+                                                style={dracula}
+                                                language={match[1]}
+                                                PreTag="div"
+                                                {...props}
+                                            />
+                                            <CopyButton code={code} />
+                                        </div>
                                     ) : (
                                         <code className={className} {...props}>
                                             {children}
                                         </code>
-                                    )
+                                    );
                                 }
                             }}
                         />
                         {post.subTitle2 && <h2>{post.subTitle2}</h2>}
                         {post.description2 && <ReactMarkdown children={post.description2} components={{
                             code({node, inline, className, children, ...props}) {
-                                const match = /language-(\w+)/.exec(className || '')
+                                const match = /language-(\w+)/.exec(className || '');
+                                const code = String(children).replace(/\n$/, '');
                                 return !inline && match ? (
-                                    <SyntaxHighlighter
-                                        children={String(children).replace(/\n$/, '')}
-                                        style={dracula}
-                                        language={match[1]}
-                                        PreTag="div"
-                                        {...props}
-                                    />
+                                    <div style={{ position: 'relative' }}>
+                                        <SyntaxHighlighter
+                                            children={code}
+                                            style={dracula}
+                                            language={match[1]}
+                                            PreTag="div"
+                                            {...props}
+                                        />
+                                        <CopyButton code={code} />
+                                    </div>
                                 ) : (
                                     <code className={className} {...props}>
                                         {children}
@@ -89,15 +118,19 @@ function PostDetails() {
                         {post.subTitle3 && <h2>{post.subTitle3}</h2>}
                         {post.description3 && <ReactMarkdown children={post.description3} components={{
                             code({node, inline, className, children, ...props}) {
-                                const match = /language-(\w+)/.exec(className || '')
+                                const match = /language-(\w+)/.exec(className || '');
+                                const code = String(children).replace(/\n$/, '');
                                 return !inline && match ? (
-                                    <SyntaxHighlighter
-                                        children={String(children).replace(/\n$/, '')}
-                                        style={dracula}
-                                        language={match[1]}
-                                        PreTag="div"
-                                        {...props}
-                                    />
+                                    <div style={{ position: 'relative' }}>
+                                        <SyntaxHighlighter
+                                            children={code}
+                                            style={dracula}
+                                            language={match[1]}
+                                            PreTag="div"
+                                            {...props}
+                                        />
+                                        <CopyButton code={code} />
+                                    </div>
                                 ) : (
                                     <code className={className} {...props}>
                                         {children}

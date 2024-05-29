@@ -184,3 +184,51 @@
     text-align: left;
 }
 
+
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--naranja);
+    color: var(--blanco);
+    font-weight: 800;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: .2s linear;
+    text-transform: uppercase;
+}
+
+.copy-button:hover {
+    background-color: var(--blanco);
+    color: var(--negro);
+    transition: .2s linear;
+}
+
+
+.tooltip {
+    visibility: visible;
+    background-color: var(--negro);
+    color: var(--blanco);
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    top: -10%;
+    left: 86%;
+    
+    width: 20%;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--negro) transparent transparent transparent;
+}
