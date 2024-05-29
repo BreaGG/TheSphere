@@ -12,7 +12,7 @@ INSERT INTO users (username, password, email, bio, profilePic, headerPic, countr
 ('Lucia Parra', 'contraina', 'ina@mail.com', 'Hola soy Lucia!', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/wg85di8piznmnfh0mqtt', 'ruta/a/imagen16.jpg', 'Spain'),
 ('Malena Fariña', 'contramalena', 'malena@mail.com', 'MaryMuffin para los amigos, la que pinta sudaderas en ByeMels', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/yortz5esfdudnl9daqmr', 'ruta/a/imagen16.jpg', 'Turquia'),
 ('Sergio Sanchez', 'contrasergios', 'sergios@mail.com', 'Corro porque vi la peli de Forrest Gump de pequeño y el corria y aun no pare de correr se nota que soy de la sierra chaval.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/onr6cc0atiglpn1arx5e', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/e56hoqvvj81hnwsokr2u', 'Navalcarnero'),
-('Alejandro Brea', '123456', 'brea@mail.com', 'Jeje soy yo.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/jkicsldr5dzih432gfyw', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/lhztro6kubixafkjazap', 'Spain'),
+('Alejandro Brea', 'contrabrea', 'brea@gmail.com', 'Jeje soy yo.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/jkicsldr5dzih432gfyw', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/lhztro6kubixafkjazap', 'Spain'),
 ('Anail Perez', 'contraanail', 'anail@mail.com', 'Hola soy Anail! Vivo en Vigo y soy muy bajita', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/qjwrmlft4r4vph2heiyp', 'ruta/a/imagen16.jpg', 'Vigo'),
 ('Marta Vilas', 'contramarta', 'marta@mail.com', 'Vivo en Santiago y juego al hockey mientras me saco una carrera!', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/g5qm3ugbme7fxsa7wbhr', 'ruta/a/imagen16.jpg', 'Santiago'),
 ('Lucas Dann', 'contralucas', 'lucas@mail.com', 'Hey all! Im Lucas, ecology is my pasion and i want to share some projects to protect our planet', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/t1mlb5ovirt50cbud72v', 'ruta/a/imagen16.jpg', 'Holanda'),
@@ -59,6 +59,35 @@ INSERT INTO posts (title, technologies, subTitle, description, media, user_id, c
 ('Fitness Tracking App', 'Kotlin, Firebase, Android', 'Personalized Fitness Plans', 'Create a fitness tracking app for Android that provides personalized workout plans and tracks users\' progress. The app will include features such as exercise tutorials, progress charts, and social sharing options.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/xxayunl47bj86bvcxalo', 9, 'DEVELOPMENT'),
 ('3D Modeling Tool', 'Blender, Python, OpenGL', 'Creative 3D Design', 'Develop a 3D modeling tool that allows users to create and manipulate 3D objects with ease. The tool will offer various modeling techniques, texture mapping, and rendering options.', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/hokgi2qattc6qvthpr3r', 10, 'DESIGN');
 
+
+INSERT INTO posts (title, technologies, subTitle, description, media, user_id, category) VALUES 
+(
+    'Building a Simple REST API with Node.js',
+    'Node.js, Express, MongoDB',
+    'A Beginner\'s Guide to REST APIs',
+    'In this tutorial, we will build a simple REST API using **Node.js** and **Express**. Below is the code to set up the server:
+
+```javascript
+const express = require(\'express\');
+const app = express();
+const port = 3000;
+
+app.get(\'/\', (req, res) => {
+    res.send(\'Hello World!\');
+});
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
+});
+```
+
+Next, we will set up our MongoDB connection...
+
+',
+    'https://miro.medium.com/v2/resize:fit:1358/0*1xZszp_OqUMrfRsV.png',
+    13,
+    'DEVELOPMENT'
+);
 
 -- Insertar comentarios
 INSERT INTO comments (content, user_id, post_id) VALUES

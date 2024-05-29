@@ -21,7 +21,7 @@
     width: 100%;
     height: auto;
     display: block;
-    filter: grayscale(100%) brightness(80%);
+    filter: grayscale(100%) brightness(60%);
     height: 270px;
     width: 100%;
     z-index: 1;

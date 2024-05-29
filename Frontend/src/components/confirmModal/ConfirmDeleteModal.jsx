@@ -13,14 +13,16 @@ function ConfirmDeleteModal({ isOpen, onClose, onConfirm, item, type }) {
                 {type === 'user' ? (
                     <div>
                         <p>Are you sure you want to delete this user?</p>
-                        <p>Username: {item.username}</p>
-                        <p>Email: {item.email}</p>
+                        <p><span>Username:</span> {item.username}</p>
+                        <p><span>Country:</span> {item.country}</p>
+                        <p><span>Email:</span> {item.email}</p>
                     </div>
                 ) : (
                     <div>
                         <p>Are you sure you want to delete this post?</p>
-                        <p>Title: {item.title}</p>
-                        <p>Description: {item.description}</p>
+                        <p><span>Title:</span> {item.title}</p>
+                        <p><span>Description:</span> {item.description}</p>
+                        <p><span>User:</span> {item.user.username}</p>
                     </div>
                 )}
                 </div>

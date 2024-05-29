@@ -105,7 +105,7 @@ function AdminDashboard() {
                     <ul>
                         {posts.map(post => (
                             <li key={post.id}>
-                                {post.title}
+                                {post.title} - {post.user.username}
                                 <button onClick={() => handleOpenModal(post, 'post')}>Delete</button>
                             </li>
                         ))}

@@ -25,6 +25,7 @@
     border-right: 2px solid var(--negro);
     padding: 1rem;
     padding-right: 2rem;
+    margin-bottom: 8%;
 }
 
 .left-container .post img{

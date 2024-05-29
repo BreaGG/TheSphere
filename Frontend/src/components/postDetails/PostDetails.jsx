@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import './PostDetails.css';
-import Navbar from '../navbar/navbar';
-import Footer from '../footer/footer';
 import { UserContext } from '../../contexts/UserContext';
 import CommentsSection from '../CommentsSection/CommentsSection';
 
@@ -42,11 +41,11 @@ function PostDetails() {
                         <h1>{post.title}</h1>
                         <h3>{post.technologies}</h3>
                         <h2>{post.subTitle}</h2>
-                        <p>{post.description}</p>
+                        <ReactMarkdown>{post.description}</ReactMarkdown>
                         {post.subTitle2 && <h2>{post.subTitle2}</h2>}
-                        {post.description2 && <p>{post.description2}</p>}
+                        {post.description2 && <ReactMarkdown>{post.description2}</ReactMarkdown>}
                         {post.subTitle3 && <h2>{post.subTitle3}</h2>}
-                        {post.description3 && <p>{post.description3}</p>}
+                        {post.description3 && <ReactMarkdown>{post.description3}</ReactMarkdown>}
                         <img src={post.media} alt="Post Media" />
                     </div>
                     <div className='asideUser'>
