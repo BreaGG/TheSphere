@@ -3,6 +3,7 @@ package com.HackUDC.services;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,8 +37,12 @@ public class usersService {
 
     public List<userModel> getRandomUsers() {
         List<userModel> allUsers = userRepository.findAll();
-        Collections.shuffle(allUsers);
-        return allUsers.subList(0, 3); 
+        // Filtro para que no salga el administrador
+        List<userModel> filteredUsers = allUsers.stream()
+                                                .filter(user -> !user.getEmail().equals("admin@thesphere.com"))
+                                                .collect(Collectors.toList());
+        Collections.shuffle(filteredUsers);
+        return filteredUsers.subList(0, Math.min(3, filteredUsers.size())); 
     }
     
     public UserDetailsDTO getUserWithPosts(Long id) {

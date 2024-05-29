@@ -18,6 +18,7 @@ import FAQ from './components/faq/faq';
 import CodeOfConduct from './components/codeOfConduct/codeOfConduct';
 import AdminDashboard from './components/adminDashboard/AdminDashboard';
 import ProtectedRoute from './config/ProtectedRoute';
+import AdminButton from './components/AdminButton/AdminButton';
 import './App.css';
 import { UserProvider } from './contexts/UserContext';
 import { useState } from 'react';
@@ -53,6 +54,7 @@ function App() {
                         }
                     />
                 </Routes>
+                <AdminButton/>
                 <Footer />
             </BrowserRouter>
         </UserProvider>

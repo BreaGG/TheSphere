@@ -7,7 +7,11 @@ function RandomUsers({ refreshTrigger }) {
     useEffect(() => {
         fetch('http://localhost:8080/api/users/random')
             .then(response => response.json())
-            .then(data => setRandomUsers(data))
+            .then(data => {
+                // Evitar que salga el admin en los featured
+                const filteredUsers = data.filter(user => user.email !== 'admin@thesphere.com');
+                setRandomUsers(filteredUsers);
+            })
             .catch(error => console.error('Error fetching random users:', error));
     }, [refreshTrigger]);
 

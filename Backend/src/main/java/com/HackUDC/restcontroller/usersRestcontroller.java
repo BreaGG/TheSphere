@@ -83,7 +83,7 @@ public class usersRestcontroller {
     public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
         userModel user = usersService.authenticateUser(loginRequest.getEmail(), loginRequest.getPassword());
         if (user != null) {
-            if (user.getEmail().equals("admin@mail.com") && user.getPassword().equals("admin")) {
+            if (user.getEmail().equals("admin@thesphere.com") && user.getPassword().equals("admin")) {
                 user.setRole("admin");
                 usersService.saveUser(user); // Save user with updated role
             }

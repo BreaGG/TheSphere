@@ -17,7 +17,7 @@ INSERT INTO users (username, password, email, bio, profilePic, headerPic, countr
 ('Marta Vilas', 'contramarta', 'marta@mail.com', 'Vivo en Santiago y juego al hockey mientras me saco una carrera!', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/g5qm3ugbme7fxsa7wbhr', 'ruta/a/imagen16.jpg', 'Santiago'),
 ('Lucas Dann', 'contralucas', 'lucas@mail.com', 'Hey all! Im Lucas, ecology is my pasion and i want to share some projects to protect our planet', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/t1mlb5ovirt50cbud72v', 'ruta/a/imagen16.jpg', 'Holanda'),
 ('Irene Casal', 'contraire', 'ire@mail.com', 'Soy Irene', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/Usuarios/loga2nulmrjtzrhbfdrc', 'https://res.cloudinary.com/dnc3btlfa/image/upload/f_auto,q_auto/v1/TheSphere/Usuarios/ccugzadwp5jy4krnog8t', 'Spain'),
-('Admin', 'admin', 'admin@mail.com', 'admin', 'ruta/a/imagen3434.jpg', 'ruta/a/imagen3434.jpg', 'Spain');
+('Admin', 'admin', 'admin@thesphere.com', 'admin', 'https://via.placeholder.com/300', 'ruta/a/imagen3434.jpg', 'Spain');
 
 -- Insertar publicaciones
 -- Publicaciones para usuario1

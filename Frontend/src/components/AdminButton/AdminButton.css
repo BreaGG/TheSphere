@@ -1,0 +1,17 @@
+.admin-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--naranja);
+    color: var(--blanco);
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 800;
+}
+
+.admin-button:hover {
+    background-color: var(--negro);
+}
