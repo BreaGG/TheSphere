@@ -1,9 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { solarizedDarkAtom, solarizedlight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './PostDetails.css';
 import { UserContext } from '../../contexts/UserContext';
 import CommentsSection from '../CommentsSection/CommentsSection';
+import { darcula, solarizedDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { darkula } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 function PostDetails() {
     const { id } = useParams();
@@ -41,11 +46,65 @@ function PostDetails() {
                         <h1>{post.title}</h1>
                         <h3>{post.technologies}</h3>
                         <h2>{post.subTitle}</h2>
-                        <ReactMarkdown>{post.description}</ReactMarkdown>
+                        <ReactMarkdown
+                            children={post.description}
+                            components={{
+                                code({node, inline, className, children, ...props}) {
+                                    const match = /language-(\w+)/.exec(className || '')
+                                    return !inline && match ? (
+                                        <SyntaxHighlighter
+                                            children={String(children).replace(/\n$/, '')}
+                                            style={dracula}
+                                            language={match[1]}
+                                            PreTag="div"
+                                            {...props}
+                                        />
+                                    ) : (
+                                        <code className={className} {...props}>
+                                            {children}
+                                        </code>
+                                    )
+                                }
+                            }}
+                        />
                         {post.subTitle2 && <h2>{post.subTitle2}</h2>}
-                        {post.description2 && <ReactMarkdown>{post.description2}</ReactMarkdown>}
+                        {post.description2 && <ReactMarkdown children={post.description2} components={{
+                            code({node, inline, className, children, ...props}) {
+                                const match = /language-(\w+)/.exec(className || '')
+                                return !inline && match ? (
+                                    <SyntaxHighlighter
+                                        children={String(children).replace(/\n$/, '')}
+                                        style={dracula}
+                                        language={match[1]}
+                                        PreTag="div"
+                                        {...props}
+                                    />
+                                ) : (
+                                    <code className={className} {...props}>
+                                        {children}
+                                    </code>
+                                )
+                            }
+                        }}/>}
                         {post.subTitle3 && <h2>{post.subTitle3}</h2>}
-                        {post.description3 && <ReactMarkdown>{post.description3}</ReactMarkdown>}
+                        {post.description3 && <ReactMarkdown children={post.description3} components={{
+                            code({node, inline, className, children, ...props}) {
+                                const match = /language-(\w+)/.exec(className || '')
+                                return !inline && match ? (
+                                    <SyntaxHighlighter
+                                        children={String(children).replace(/\n$/, '')}
+                                        style={dracula}
+                                        language={match[1]}
+                                        PreTag="div"
+                                        {...props}
+                                    />
+                                ) : (
+                                    <code className={className} {...props}>
+                                        {children}
+                                    </code>
+                                )
+                            }
+                        }}/>}
                         <img src={post.media} alt="Post Media" />
                     </div>
                     <div className='asideUser'>
