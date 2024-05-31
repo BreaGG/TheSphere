@@ -123,7 +123,7 @@
 .Post4 img,
 .Post6 img,
 .Post8 img {
-    filter: saturate(0);
+    filter: saturate(var(--saturation));
     transition: .2s linear;
 }
 

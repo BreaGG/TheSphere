@@ -87,7 +87,30 @@
     padding-right: 1rem;    
     background-color: var(--naranja);
     color: var(--blanco);
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
+
+.joinButton {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 3.4rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;    
+    background-color: var(--naranja);
+    color: var(--blanco);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.joinButton:hover {
+    background-color: var(--negro);
+}
+
 
 .text-a {
     color: var(--blanco);

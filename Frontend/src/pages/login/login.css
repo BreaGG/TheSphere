@@ -90,6 +90,12 @@
     color: var(--negro);
     font-weight: bold;
     margin-top: 0.5%;
+    transition: .1s linear;
+}
+
+.text-b:hover {
+    color: var(--naranja);
+    transition: .1s linear;
 }
 
 .error {

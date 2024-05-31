@@ -1,7 +1,7 @@
-.admin-button {
+/* .admin-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 5rem;
+    right: 1rem;
     background-color: var(--naranja);
     color: var(--blanco);
     border: none;
@@ -11,7 +11,22 @@
     transition: background-color 0.3s ease;
     font-weight: 800;
 }
+*/
 
 .admin-button:hover {
     background-color: var(--negro);
+} 
+
+.admin-button {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--naranja);
+    font-weight: 700;
+    font-size: 1.3rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
 }

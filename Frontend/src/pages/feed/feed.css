@@ -60,7 +60,7 @@
 
 .right-container .post img{
     width: 100%;
-    filter: saturate(0%);
+    filter: saturate(var(--saturation));
     aspect-ratio: 16 / 9;
     object-fit: cover;
     transition: .2s linear;

@@ -32,10 +32,10 @@ RUN chmod +x /app/wait-for-it.sh
 EXPOSE 8080
 
 # # Comando por defecto para ejecutar la aplicación
-ENTRYPOINT ["tail"]
-CMD ["-f","/dev/null"]
+# ENTRYPOINT ["tail"]
+# CMD ["-f","/dev/null"]
 
 # # CMD mvn spring-boot:run
-# CMD ["./wait-for-it.sh", "mysql:5012", "--", "java", "-jar", "app.jar"]
+CMD ["./wait-for-it.sh", "mysql:5012", "--", "java", "-jar", "app.jar"]
 
 # #CMD mvn spring-boot:run
