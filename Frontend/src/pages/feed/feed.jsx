@@ -67,12 +67,11 @@ function Feed({ searchTerm }) {
                         ))}
                 </div>
             </div>
-            {visiblePosts < filteredPosts.length && (
-                <div className='loadMoreButtonContainer' onClick={handleShowMore}>
-                    <button className='loadMoreButton'>
+            {visiblePosts < filteredPosts.length && ( 
+                    <button className='loadMoreButton' onClick={handleShowMore}>
                         LOAD MORE
                     </button>
-                </div>
+            
             )}
             <PostGrid/>
         </section>

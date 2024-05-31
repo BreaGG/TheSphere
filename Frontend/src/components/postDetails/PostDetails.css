@@ -21,7 +21,7 @@
     width: 100%;
     height: auto;
     display: block;
-    filter: grayscale(100%) brightness(60%);
+    filter: saturate(0) brightness(60%);
     height: 270px;
     width: 100%;
     z-index: 1;
@@ -33,7 +33,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--naranja);
+    color: var(--titulo);
     font-size: 2em;
     margin: 0;
     z-index: 2;

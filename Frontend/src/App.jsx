@@ -38,6 +38,7 @@ function App() {
             root.style.setProperty('--fondo', '#FFFFFF');
             root.style.setProperty('--gris', '#000000');
             root.style.setProperty('--saturation', '100%');
+            root.style.setProperty('--titulo', '#FFFFFF');
         } else {
             root.style.setProperty('--naranja', '#FF503F');
             root.style.setProperty('--blanco', '#FFFFFF');
@@ -45,6 +46,7 @@ function App() {
             root.style.setProperty('--fondo', '#E5E3E1');
             root.style.setProperty('--gris', '#B6B6B6');
             root.style.setProperty('--saturation', '0%');
+            root.style.setProperty('--titulo', '#FF503F');
         }
         setAccessible(!accessible);
     };

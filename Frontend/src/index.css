@@ -13,12 +13,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --naranja: #FF503F; /* Color primario */
-  --blanco: #FFFFFF; /* Color secundario */
-  --negro: #1E1E1E; /* Color de fondo */
+  --naranja: #FF503F; 
+  --blanco: #FFFFFF; 
+  --negro: #1E1E1E; 
   --fondo: #E5E3E1;
   --gris: #B6B6B6;
   --saturation: 0%;
+  --titulo: #FF503F;
 }
 
 .botonNaranja {

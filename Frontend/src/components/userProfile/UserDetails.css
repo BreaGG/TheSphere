@@ -159,7 +159,7 @@
     left: 50%;
     width: 80%;
     transform: translate(-50%, -50%);
-    color: var(--naranja);
+    color: var(--titulo);
     font-size: 3em;
     text-align: center;
     margin: 0;
