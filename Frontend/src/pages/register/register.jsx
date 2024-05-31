@@ -52,8 +52,7 @@ function Register() {
                 <form onSubmit={handleSubmit}>
                     <h1>JOIN THE <span>SPHERE</span></h1>
                     <label>
-                        EMAIL:
-                        <br />
+                        <h3>EMAIL:</h3>
                         <input
                             type="email"
                             value={email}
@@ -63,8 +62,7 @@ function Register() {
                         />
                     </label>
                     <label>
-                        USERNAME:
-                        <br />
+                        <h3>USERNAME:</h3>
                         <input
                             type="text"
                             value={username}
@@ -74,8 +72,7 @@ function Register() {
                         />
                     </label>
                     <label>
-                        PASSWORD:
-                        <br />
+                        <h3>PASSWORD:</h3>
                         <input
                             type="password"
                             value={password}
@@ -85,8 +82,7 @@ function Register() {
                         />
                     </label>
                     <label>
-                        COUNTRY:
-                        <br />
+                        <h3>COUNTRY:</h3>
                         <input
                             type="text"
                             value={country}
@@ -95,10 +91,10 @@ function Register() {
                             placeholder='Country'
                         />
                     </label>
-                    <p className="">You will be able to add a picture before.</p>
+                    <p className="picture">You will be able to add a picture before.</p>
                     {error && <p className="error">{error}</p>}
                     <br />
-                    <button className='joinButton' type="submit">JOIN NOW!</button>
+                    <button className='joinButton' type="submit"><p>JOIN NOW!</p></button>
                     <Link className='text-b' to="/login">ALREADY HAVE AN ACCOUNT? LOG IN!</Link>
                 </form>
                 

@@ -25,7 +25,7 @@ Antes de comenzar, asegúrese de tener instalados los siguientes componentes en 
 - MySQL (o cualquier otra base de datos compatible con JDBC)
 - Docker y Docker Compose
 
-#### Instalación con Docker (Docker Compose)
+#### Instalación con Docker Compose (Recomendada)
 
 1. **Clonar el repositorio:**
    ```bash

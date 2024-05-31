@@ -53,8 +53,7 @@ function Login() {
                 <form onSubmit={handleSubmit}>
                     <h1>JOIN THE <span>SPHERE</span></h1>
                     <label>
-                        EMAIL:
-                        <br />
+                        <h3>EMAIL:</h3>
                         <input
                             type="email"
                             value={email}
@@ -64,8 +63,7 @@ function Login() {
                         />
                     </label>
                     <label>
-                        PASSWORD:
-                        <br />
+                        <h3>PASSWORD:</h3>
                         <input
                             type="password"
                             value={password}
@@ -76,7 +74,7 @@ function Login() {
                     </label>
                     <br />
                     {error && <p className="error">{error}</p>}
-                    <button className='joinButton' type="submit">JOIN NOW!</button>
+                    <button className='joinButton' type="submit"><p>JOIN NOW!</p></button>
                     <Link className='text-b' to="/register">DON'T HAVE AN ACCOUNT? SIGN IN!</Link>
                 </form>
                 <p className='bottom-margin p-sides'>Software is a great combination between artistry and engineering. When you finally get done and get to appreciate what you have done it is like a part of yourself that you've put together. I think a lot of the people here feel that way. - Bill Gates</p>

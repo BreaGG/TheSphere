@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   margin: auto;
@@ -50,5 +50,31 @@ span {
 }
 
 .accessibility-button:hover {
+  background-color: var(--negro);
+}
+
+.joinButton {
+  margin-top: 8%;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 3.4rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;    
+  background-color: var(--naranja);
+  color: var(--blanco);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.joinButton p{
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 900;
+}
+
+.joinButton:hover {
   background-color: var(--negro);
 }

@@ -48,20 +48,34 @@
     justify-content: center;
     background-color: var(--fondo);
     padding: 2rem;
+    padding-top: 0rem;
+    text-align: center;
+}
+
+.Login article form .picture{
+    margin-bottom: -12%;
+    margin-top: 10%;
 }
 
 .Login article form h1{
     font-size: 2.5rem;
     font-weight: 900;
+    margin-bottom: 0;
+}
+
+.Login article form h3{
+    text-align: left;
+    margin-bottom: 0;
 }
 
 .Login article form label{
     font-size: 1.8rem;
     font-weight: 700;
+    margin-bottom: -8%;
 }
 
 .Login article form input{
-    width: 85%;
+    width: 100%;
     background-color: var(--gris);
     border-radius: 0px;
     border: none;
@@ -70,16 +84,18 @@
 }
 
 .Login article form input::placeholder{
-    font-size: 1.7rem;
+    font-size: 1.3rem;
 }
 
 
 .Login article .p {
-    margin-top: 14%; /* Añade un margen superior del 20% */
+    margin-top: 14%; 
+    text-transform: uppercase;
 }
 
 .Login article .bottom-margin {
-    margin-bottom: 14%; /* Añade un margen inferior del 20% */
+    margin-bottom: 14%; 
+    text-transform: uppercase;
 }
 
 .Login form input:focus {
@@ -89,7 +105,7 @@
 .text-b {
     color: var(--negro);
     font-weight: bold;
-    margin-top: 0.5%;
+    margin-top: 2%;
     transition: .1s linear;
 }
 
@@ -102,6 +118,8 @@
     color: var(--naranja);
     margin: 0;
 }
+
+
 
 
 .modal {
@@ -123,3 +141,4 @@
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
