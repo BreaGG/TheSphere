@@ -23,18 +23,6 @@ services:
     build:
       context: ./Backend
       dockerfile: Dockerfile
-    # environment:
-      # - MYSQL_HOST=mysql-server:5011
-      # - MYSQL_DATABASE=subesdb
-      # - MYSQL_USERNAME=root
-      # - MYSQL_PASSWORD=root
-      # SPRING_DATASOURCE_URL: jdbc:mysql://localhost:5011/subesdb
-      # # SPRING_DATASOURCE_URL: jdbc:mysql://localhost:5011/subesdb?createDatabaseIfNotExist=true
-      # SPRING_DATASOURCE_USERNAME: root
-      # SPRING_DATASOURCE_PASSWORD: root
-      # SPRING_JPA_HIBERNATE_DDL_AUTO: update
-      # SPRING_JPA_SHOW_SQL: "true"
-      # SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
     depends_on:
       mysql:
         condition: service_healthy

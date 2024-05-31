@@ -12,17 +12,37 @@ El proyecto se divide en dos partes principales:
 
 ### Guía de Instalación para el Administrador
 
-Esta guía detalla los pasos para la instalación y configuración de un proyecto compuesto por un frontend desarrollado con React y Vite, y un backend desarrollado con Spring Boot.
+Existen dos formas de instalar y correr la aplicación, desplegando el contenedor Docker o instalando en local las dependencias. Recomendamos encarecidamente desplegar con Docker para evitar incompatibilidades.  
 
 #### Requisitos Previos
 
-Antes de comenzar, asegúrese de tener instalados los siguientes componentes en su sistema:
+Antes de comenzar, asegúrese de tener instalados los siguientes componentes en su sistema (Si despliega con Docker solo necesita Docker como requisito previo): 
 
 - Node.js (v16 o superior)
 - npm (v6 o superior)
 - JDK (Java Development Kit) 17
 - Maven (v3.6 o superior)
 - MySQL (o cualquier otra base de datos compatible con JDBC)
+- Docker y Docker Compose
+
+#### Instalación con Docker (Docker Compose)
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/BreaGG/TheSphere
+   cd Fronted
+   ```
+   
+2. **Construir y levantar los contenedores:**
+   ```bash
+   docker-compose up --build
+   ```
+
+Este comando construirá las imágenes Docker para el frontend y el backend, y luego levantará todos los servicios definidos en docker-compose.yml.
+
+3. **Acceder a la Aplicación:**
+   - El frontend estará disponible en `http://localhost:5173`
+   - El backend estará disponible en `http://localhost:8080`
 
 #### Instalación del Frontend (React + Vite)
 
@@ -41,7 +61,7 @@ Antes de comenzar, asegúrese de tener instalados los siguientes componentes en 
    ```bash
    npm run dev
    ```
-   Esto iniciará el servidor de desarrollo y la aplicación estará disponible en `http://localhost:3000`.
+   Esto iniciará el servidor de desarrollo y la aplicación estará disponible en `http://localhost:5173`.
 
 4. **Compilar la aplicación para producción:**
    ```bash
@@ -72,8 +92,8 @@ Antes de comenzar, asegúrese de tener instalados los siguientes componentes en 
 
 3. **Compilar y ejecutar la aplicación:**
    ```bash
-   mvn clean install
-   mvn spring-boot:run
+   ./mvn clean install
+   ./mvn spring-boot:run
    ```
    Esto iniciará el servidor backend y estará disponible en `http://localhost:8080`.
 
