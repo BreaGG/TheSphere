@@ -30,7 +30,6 @@ Antes de comenzar, asegúrese de tener instalados los siguientes componentes en 
 1. **Clonar el repositorio:**
    ```bash
    git clone https://github.com/BreaGG/TheSphere
-   cd Fronted
    ```
    
 2. **Construir y levantar los contenedores:**
@@ -43,6 +42,7 @@ Este comando construirá las imágenes Docker para el frontend y el backend, y l
 3. **Acceder a la Aplicación:**
    - El frontend estará disponible en `http://localhost:5173`
    - El backend estará disponible en `http://localhost:8080`
+   - PhpMyAdmin estará disponible en `http://localhost:8081`
 
 #### Instalación del Frontend (React + Vite)
 

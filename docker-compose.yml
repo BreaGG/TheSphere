@@ -1,9 +1,9 @@
-
 version: '3.8'
 
 services:
   mysql:
     image: mysql:8.0
+    container_name: TheSphereDB
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: subesdb
@@ -18,8 +18,24 @@ services:
       retries: 3
     networks:
       - springapimysql-net
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: PhpMyAdmin
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql
+    networks:
+      - springapimysql-net
 
   backend:
+    container_name: TheSphereBackend
     build:
       context: ./Backend
       dockerfile: Dockerfile
@@ -31,8 +47,8 @@ services:
     networks:
       - springapimysql-net
 
-
   frontend:
+    container_name: TheSphereFrontend
     build:
       context: ./Frontend
       dockerfile: Dockerfile
