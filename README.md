@@ -3,6 +3,40 @@
 ## Descripción
 TheSphere es una plataforma web diseñada para conectar a diseñadores y desarrolladores. Los usuarios pueden registrarse, iniciar sesión, publicar proyectos, comentar en publicaciones, y ver perfiles de otros usuarios. El proyecto está construido utilizando React en el frontend y Spring Boot en el backend.
 
+## Tabla de Contenidos
+1. [Descripción](#descripción)
+2. [Estructura del Proyecto](#estructura-del-proyecto)
+3. [Instalación y Configuración](#instalación-y-configuración)
+   - [Guía de Instalación para el Administrador](#guía-de-instalación-para-el-administrador)
+     - [Requisitos Previos](#requisitos-previos)
+     - [Instalación con Docker Compose (Recomendada)](#instalación-con-docker-compose-recomendada)
+     - [Instalación del Frontend (React + Vite)](#instalación-del-frontend-react--vite)
+     - [Instalación del Backend (Spring Boot)](#instalación-del-backend-spring-boot)
+   - [Dependencias Utilizadas](#dependencias-utilizadas)
+     - [Frontend (`package.json`)](#frontend-packagejson)
+     - [Backend (`pom.xml`)](#backend-pomxml)
+   - [Notas Adicionales](#notas-adicionales)
+4. [Uso de la Aplicación](#uso-de-la-aplicación)
+   - [Registro e Inicio de Sesión](#registro-e-inicio-de-sesión)
+   - [Publicación de Proyectos](#publicación-de-proyectos)
+   - [Comentarios](#comentarios)
+   - [Perfiles de Usuarios](#perfiles-de-usuarios)
+   - [Usuarios Aleatorios](#usuarios-aleatorios)
+5. [Componentes Principales](#componentes-principales)
+   - [Frontend](#frontend)
+     - [Componentes](#componentes)
+     - [Contextos](#contextos)
+   - [Backend](#backend)
+     - [Controladores](#controladores)
+     - [Modelos](#modelos)
+     - [Servicios](#servicios)
+6. [Base de Datos](#base-de-datos)
+   - [Esquema](#esquema)
+   - [Consultas SQL de Ejemplo](#consultas-sql-de-ejemplo)
+     - [Insertar Usuarios](#insertar-usuarios)
+     - [Insertar Publicaciones](#insertar-publicaciones)
+     - [Insertar Comentarios](#insertar-comentarios)
+
 ## Estructura del Proyecto
 El proyecto se divide en dos partes principales:
 - **Frontend:** Construido con React.
